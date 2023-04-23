@@ -1,0 +1,317 @@
+
+.container__home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 90vh;
+    background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    font-family: 'Share Tech', sans-serif;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .home_build {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .heading {
+    width: 50%;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   
+  }
+  
+  .heading h1 {
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    /*animation: lights 5s 750ms linear infinite;
+    /*-webkit-text-stroke: 1px #7F00FF;*/
+  }
+  
+  @keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+  }
+  
+  
+  .heading h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .btn-head {
+    --border-color: linear-gradient(-45deg, #7F00FF, #7e03aa, #00fffb);
+    --border-width: .125em;
+    --curve-size: .5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: white;
+    color: var(--color);
+      /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: .5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    margin: 1rem;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+    clip-path: polygon(
+              /* Top-left */
+              0% var(--curve-size),
+  
+              var(--curve-size) 0,
+              /* top-right */
+              100% 0,
+              100% calc(100% - var(--curve-size)),
+  
+              /* bottom-right 1 */
+              calc(100% - var(--curve-size)) 100%,
+              /* bottom-right 2 */
+              0 100%);
+    transition: color 250ms;
+  }
+  
+  .btn-head::after,
+  .btn-head::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  
+  .btn-head::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+  }
+  
+  @keyframes move-bg7234 {
+    0% {
+      background-position: 31% 0%
+    }
+  
+    50% {
+      background-position: 70% 100%
+    }
+  
+    100% {
+      background-position: 31% 0%
+    }
+  }
+  
+  .btn-head::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+              /* Top-left */
+              var(--border-width) 
+              calc(var(--curve-size) + var(--border-width) * .5),
+  
+              calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+  
+              /* top-right */
+              calc(100% - var(--border-width)) 
+              var(--border-width),
+  
+              calc(100% - var(--border-width)) 
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+  
+              /* bottom-right 1 */
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+              /* bottom-right 2 */
+              var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+    
+  }
+  
+  .btn-head:where(:hover, :focus)::after {
+    clip-path: polygon(
+                  /* Top-left */
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      
+                  calc(100% - var(--border-width))
+  
+                  var(--border-width),
+      
+                  /* top-right */
+                  calc(100% - var(--border-width))
+  
+                   var(--border-width),
+      
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+      
+                  /* bottom-right 1 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
+                  calc(100% - var(--border-width)),
+  
+                  /* bottom-right 2 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                  calc(100% - var(--border-width)));
+    transition: 200ms;
+  }
+  
+  .btn-head:where(:hover, :focus) {
+    color: #fff;
+  }
+  
+  
+  .imgD {
+    margin-top: -1rem;
+    background: linear-gradient(var(--color-crimson), transparent);
+    width: 30rem;
+    height: 30rem;
+    position: relative;
+    left: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 12rem 12rem 0rem 0rem;
+    padding-left: 3.5rem;
+    margin-left: 7rem;
+    margin-top: 2rem;
+    overflow: hidden;
+  
+  }
+  
+  .imgDyaa {
+    max-width: 100%;
+    animation: lights 5s 750ms linear infinite;
+  }
+  
+  
+  
+  
+  /* SMALLER */
+  @media only screen and (max-width: 768px) {
+    /* adjust styles for screens up to 768px wide */
+    .container__home {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 5rem;
+      min-height: 100vh;
+      flex-direction: column-reverse;
+      overflow-x: hidden;
+    }
+  
+    
+    
+    .home_build {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+    .heading {
+      width: 100%;
+      padding: 3rem;
+    }
+  
+    .heading h1
+    {
+      font-size: 6rem;
+      padding: 2rem;
+    }
+    .heading h2
+    {
+      font-size: 1.4rem;
+    }
+
+    .container__image-box
+    {
+      margin-top: 14rem;
+    }
+    .imgD{
+        display: none;
+    }
+  
+    .cta
+    {
+        margin-left: 4rem;
+        
+    }
+     
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    /* adjust styles for screens between 769px and 1024px wide */
+    .container__home {
+      justify-content: center;
+      padding-top: 5rem;
+      
+    }
+  
+    .heading {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      
+    }
+    .heading h1
+    {
+      font-size: 4rem;
+    }
+  
+  }
+  
+  
