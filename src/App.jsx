@@ -14,7 +14,7 @@ import FOOTER from "./CONTAINERS/FOOTER/footer"
 const App = () => {
   return (
     <Router>
-     
+      <NAVMENU/>
 
       <Routes>
         <Route path="/" element={<MAIN />} />

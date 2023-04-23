@@ -10,6 +10,7 @@ import SECTIONS  from "./SECTION/sections"
 const main = () => {
   return (
     <div className='container__main' id='main'>
+      
         <HERO/>
         <ABOUT/>
         <SECTIONS/>

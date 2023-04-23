@@ -27,11 +27,24 @@ const Sections = () => {
       return <Navigate to="/hobbies" />;
     }
 
+// Save current scroll position
+window.addEventListener('beforeunload', function() {
+  localStorage.setItem('scrollPos', window.scrollY);
+});
+
+// Restore scroll position on page load
+window.addEventListener('load', function() {
+  var scrollPos = localStorage.getItem('scrollPos');
+  if (scrollPos) {
+    window.scrollTo(0, scrollPos);
+    localStorage.removeItem('scrollPos');
+  }
+});
 
   
   return (
     <div className='container__sections'>
-
+        <h1>Lets Explore</h1>
         <section className="cards-wrapper">
             <div className="card-grid-space">
               <div className="card" style={{ "--bg-img": `url(${WORK})` }}>
