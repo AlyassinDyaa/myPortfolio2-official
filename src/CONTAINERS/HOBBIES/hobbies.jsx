@@ -1,10 +1,13 @@
 import React from 'react'
 import "./hobbies.css"
 
+import HEAD from "./header/head"
+
+
 const hobbies = () => {
   return (
     <div>
-      HOBBIES COMING SOON 
+      <HEAD/>
     </div>
   )
 }

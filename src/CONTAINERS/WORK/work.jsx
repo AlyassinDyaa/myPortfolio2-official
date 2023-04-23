@@ -1,5 +1,7 @@
 import React from 'react'
+
 import TIME from "./TIMELINE/time"
+import PROJECT from "./PROJECTS/projects"
 
 
 const work = () => {
@@ -7,6 +9,7 @@ const work = () => {
     <div>
         WORK
         <TIME/>
+        <PROJECT/>
     </div>
   )
 }

@@ -15,11 +15,11 @@ const imageAnimation = {
 const textAnimation = {
   initial: { y: 50, opacity: 0 },
   animate: { y: 0, opacity: 1 },
-  transition: { duration: 1, delay: 0.5 }
+  transition: { duration: 1, delay: 0.2 }
 };
 
 const About = () => {
-  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { ref, inView } = useInView({ threshold: 0.2 });
 
   return (
     <div className="container" id="about" ref={ref}>

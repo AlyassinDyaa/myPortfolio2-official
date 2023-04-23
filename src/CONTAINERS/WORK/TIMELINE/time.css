@@ -6,7 +6,10 @@
     max-width: 100%;
   }
   
+body{
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 
+}
   
   
   /* -------------------------------- 
@@ -19,6 +22,7 @@
     width: 90%;
     max-width: 1170px;
     margin: 0 auto;
+
   }
   .cd-container::after {
     /* clearfix */
