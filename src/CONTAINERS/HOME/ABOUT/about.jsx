@@ -60,7 +60,7 @@ const About = () => {
         animate={inView ? "animate" : "initial"}
         transition={textAnimation.transition}
       >
-        <h1 className="title" style={{  opacity: 80 }}>
+        <h1 className="title" style={{  opacity: 80 , fontSize: "3rem"}}>
           About Me
         </h1>
         <h2 className="subtitle">Motivation</h2>

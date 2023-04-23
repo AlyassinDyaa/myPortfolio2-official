@@ -13,6 +13,7 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
   font-size: 4rem;
+  color: white;
 }
 
 .page-content {
@@ -36,7 +37,7 @@
 }
 
 .card {
-  border-radius: 10px;
+  
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -47,7 +48,14 @@
   color: whitesmoke;
   background-color: whitesmoke;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+  /* add border */
+  border: 2px solid transparent;
+  border-radius: 20px;
 }
+
+
+
+
 @media (min-width: 600px) {
   .card {
     height: 350px;
@@ -64,6 +72,7 @@
   background-position: 0 0;
   transition: transform calc(var(--d) * 1.5) var(--e);
   pointer-events: none;
+  border-radius: 10px 10px 0 0; /* Add this line */
 }
 .card:after {
   content: "";
@@ -106,7 +115,7 @@
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: bold;
   line-height: 1.2;
 }
