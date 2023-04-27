@@ -1,0 +1,222 @@
+
+  
+  .container__work-title
+  {
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+  .container__work-sub
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem; /* decrease the padding-top value */
+    color: white;
+  }
+  
+  
+  .work {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   
+     justify-content: center;
+    align-items: center;
+    height: 100hv;
+  }
+  
+  .card-container {
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    border: solid 0.5em transparent;
+    background-clip: content-box, border-box;
+    width: 40vmin;
+    height: 30vmin;
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin: 0 8px 16px 8px; /* add bottom margin to create space between rows */ 
+ }
+  
+    
+  
+    
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+      
+    }
+    
+    .flip-card-front, .flip-card-back {
+      box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border: 1px solid var;
+      border-radius: 1rem;
+    }
+    
+    .flip-card-front {
+      background: linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);  color: 	#800080;
+      color: white;  
+      
+    }
+    
+  
+    .flip-card-front:hover
+    {
+      box-shadow: 0 0 30px violet;
+    }
+    .flip-card-back {
+      background: linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);  color: 	#800080;
+      color: white;
+      transform: rotateY(180deg);
+      flex-shrink: 0;
+      margin: 0;
+      padding: -10rem;
+      margin-top: -10px; /* add negative margin-top to bring the text up */
+      box-shadow: 0 0 30px violet;
+  
+    }
+    
+  
+    .title {
+        font-size: large;
+        text-align: center;
+        
+      }
+      
+  
+  
+    .container__links
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    padding-bottom: 30px;
+    }
+  
+    .container__eye h1
+    {
+      font-size: small;
+      margin: 0;
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+      
+    }
+  
+    .container__git h1
+    {
+      font-size: small;
+      margin: 0;
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+    }
+  
+  
+    .img {
+      object-fit:fill;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2rem;
+      margin-top: 5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border: 2px solid violet;
+    }
+    
+    
+  
+   
+    @media (max-width: 599px) {
+
+        .flip-card {
+       
+            width: 300px;
+            height: 60vmin;
+            perspective: 1000px;
+            font-family: sans-serif;
+            margin: 0 8px 16px 8px; /* add bottom margin to create space between rows */ 
+         }
+  
+         
+        .flip-card-inner {
+          perspective: 500px;
+          transition: transform 0.5s;
+        }
+
+        .img {
+            object-fit:fill;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            margin-top: 5rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border: 2px solid violet;
+          }
+
+          .title {
+            font-size: 20px;
+            text-align: center;
+           
+          }
+          
+    
+        .container__eye h1
+        {
+          font-size: 8px;
+          margin: 0;
+          padding-top: 2rem;
+          padding-bottom: 0.5rem;
+          
+        }
+      
+        .container__git h1
+        {
+          font-size: 8px;
+          margin: 0;
+          padding-top: 2rem;
+          padding-bottom: 0.5rem;
+        }
+
+        .work {
+           
+            grid-template-columns: repeat(1, 1fr);   
+            
+          }
+          
+      }
+
+
+  
