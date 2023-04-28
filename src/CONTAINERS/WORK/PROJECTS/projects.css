@@ -219,4 +219,29 @@
       }
 
 
-  
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        /* CSS rules for tablet screens */
+        .card-container{
+       
+        }
+
+        .work {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-flow: dense;
+        }
+      }
+      
+
+      @media (min-width: 731px) and (max-width: 835px) {
+        /* CSS rules for tablet screens */
+        .card-container{
+       
+        }
+
+        .work {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-flow: dense;
+        }
+      }
