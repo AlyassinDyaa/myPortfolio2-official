@@ -14,7 +14,7 @@ const Sections = () => {
     const [goToHobbies, setGoToHobbies] = React.useState(false);
 
     if (goToWork) {
-      return <Navigate to="/Work" />;
+      return <Navigate to="/work" />;
     }
     if (goToEDU) {
       return <Navigate to="/edu" />;
@@ -56,7 +56,7 @@ const Sections = () => {
           <div class="card">
             <div class="content">
               <h2 class="title">SKILLS</h2>
-              <p class="copy">Unveil my skill set in the skills section of my portfolio website.</p>
+              <p class="copy">Unveil my skillset in the skills section of my portfolio website.</p>
               <button class="btn-head" onClick={() => {setGoToSkills(true);  scrollToTop();}}>Lets Go</button>
             </div>
           </div>

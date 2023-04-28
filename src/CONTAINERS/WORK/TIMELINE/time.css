@@ -483,3 +483,20 @@ body{
       transform: translateX(0);
     }
   }
+
+  .cd-timeline-block .cd-timeline-content p {
+  display: none;
+}
+
+.cd-timeline-block:hover .cd-timeline-content p {
+  display: block;
+}
+
+.cd-timeline-content p {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.cd-timeline-content:hover p {
+  opacity: 1;
+}

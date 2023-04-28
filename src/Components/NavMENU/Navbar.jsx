@@ -5,6 +5,9 @@ import { BiInfinite } from 'react-icons/bi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import './Navbar.css';
 
+
+const scrollToTop = () => window.scrollTo(0, 0);
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
@@ -14,20 +17,20 @@ const Navbar = () => {
         <h2 style={{ color: 'wheat' }}>DA</h2>
       </div>
       <ul className="app__navbar-links">
-        <li className="p__opensans">
-          <Link to="/">Home</Link>
+      <li className="p__opensans">
+          <Link to="/" onClick={() => {  scrollToTop();} }>Home</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/work">Work</Link>
+          <Link to="/work" onClick={() => {  scrollToTop();} }>Work</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/edu">Education</Link>
+          <Link to="/edu" onClick={() => {  scrollToTop();} }>Education</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/skills">Skills</Link>
+          <Link to="/skills" onClick={() => {  scrollToTop();} }>Skills</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/hobbies">Hobbies</Link>
+          <Link to="/hobbies" onClick={() => {  scrollToTop();} }>Hobbies</Link>
         </li>
       </ul>
 
@@ -46,27 +49,27 @@ const Navbar = () => {
             />
             <ul className="app__navbar-smallscreen_links">
               <li>
-                <Link to="/" onClick={() => setToggleMenu(false)}>
+                <Link to="/" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/work" onClick={() => setToggleMenu(false)}>
+                <Link to="/work" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Work
                 </Link>
               </li>
               <li>
-                <Link to="/edu" onClick={() => setToggleMenu(false)}>
+                <Link to="/edu"onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Education
                 </Link>
               </li>
               <li>
-                <Link to="/skills" onClick={() => setToggleMenu(false)}>
+                <Link to="/skills" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Skills
                 </Link>
               </li>
               <li>
-                <Link to="/hobbies" onClick={() => setToggleMenu(false)}>
+                <Link to="/hobbies" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Hobbies
                 </Link>
               </li>
