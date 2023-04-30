@@ -1,0 +1,23 @@
+.group {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 90vh;
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+
+}
+
+.group h1 {
+  margin: 4rem;
+}
+
+.item {
+  width: 15vw;
+  height: 75vh;
+  background-position: center;
+  background-size: cover; /* or contain */
+  margin: 1vw;
+  border-radius: 3vw;
+  display: inline-block;
+  cursor: pointer;
+}

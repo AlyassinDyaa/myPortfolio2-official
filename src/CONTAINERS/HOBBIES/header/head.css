@@ -1,42 +1,4 @@
-.head-container {
-    position: relative;
-    height: 100vh; /* adjust as needed */
-    background-image: url("../../../Assets/unsplash_assets/b5.jpg");
-    background-size: cover;
-    background-position: center;
-    background-size: contain;
 
-  }
-  
-
-  .character-image {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px; /* adjust as needed */
-  }
-  
-  .head-container h1{
-    position: absolute;
-    top: 200px; /* adjust as needed */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2em; /* adjust as needed */
-    color: white;
-    font-size: 3rem;
-  }
-  
-  .smoke-image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-  }
-  
   /******************************************/
 
   body {
@@ -74,7 +36,8 @@
   }
   
   .first-section {
-    padding: 50px 0 20px 0;
+    padding: 3rem;
+    margin: 2rem;
   }
   
   .text-header {
@@ -151,3 +114,6 @@
   .tutorial-link:hover {
     color: #ede0d5;
   }
+
+
+  
