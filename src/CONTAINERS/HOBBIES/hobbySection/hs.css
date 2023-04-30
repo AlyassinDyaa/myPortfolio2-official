@@ -4,11 +4,6 @@
   overflow: hidden;
   min-height: 90vh;
   background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-
-}
-
-.group h1 {
-  margin: 4rem;
 }
 
 .item {
@@ -20,4 +15,30 @@
   border-radius: 3vw;
   display: inline-block;
   cursor: pointer;
+  position: relative; /* needed for absolute positioning of the title */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.9); /* add drop shadow */
+  border: 2px solid white;
+}
+
+.item.expanded h1.title {
+  opacity: 1; /* show title when expanded */
+  transition: opacity 0.5s; /* add transition effect */
+}
+
+.item h1.title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 2rem;
+  opacity: 0; /* hide by default */
+  transition: opacity 0.5s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* add drop shadow */
+}
+
+.item.expanded h1.title {
+  opacity: 1; /* show title when expanded */
+  font-size: 2rem;
+  
 }
