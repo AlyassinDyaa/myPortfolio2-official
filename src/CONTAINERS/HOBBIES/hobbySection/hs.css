@@ -20,11 +20,6 @@
   border: 2px solid white;
 }
 
-.item.expanded h1.title {
-  opacity: 1; /* show title when expanded */
-  transition: opacity 0.5s; /* add transition effect */
-}
-
 .item h1.title {
   position: absolute;
   bottom: 0;
@@ -40,5 +35,45 @@
 .item.expanded h1.title {
   opacity: 1; /* show title when expanded */
   font-size: 2rem;
+  transition: opacity 0.5s; /* add transition effect */
+
   
+}
+
+.group h1 {
+  padding: 5rem;
+  transition: opacity 0.5s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 4rem !important;
+}
+
+
+@media (max-width: 599px) {
+
+  .item h1.title {
+      font-size: 1rem !important;
+  }
+
+  .group h1 {
+    padding: 5rem;
+    transition: opacity 0.5s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2rem !important;
+  }
+  
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .item h1.title {
+    font-size: 2rem !important;
+}
+
+.group h1 {
+  padding: 5rem;
+  transition: opacity 0.5s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3rem !important;
+}
+
 }

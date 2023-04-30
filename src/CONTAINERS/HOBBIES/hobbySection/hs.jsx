@@ -46,6 +46,9 @@ const Hs = () => {
 
   return (
     <div className="group">
+
+            <h1>HOBBIES</h1>
+            
             <div className="item" style={{ backgroundImage: `url(${image1})` }}>
               <h1 className="title">SWIMMING</h1>
               
