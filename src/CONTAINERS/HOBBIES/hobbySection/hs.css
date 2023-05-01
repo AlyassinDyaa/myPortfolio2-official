@@ -2,8 +2,9 @@
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  min-height: 90vh;
-  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  min-height: 120vh;
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, rgba(27, 39, 53, 0.9) 0%, rgba(9, 10, 15, 0.9) 100%);
+
 }
 
 .item {
@@ -17,7 +18,7 @@
   cursor: pointer;
   position: relative; /* needed for absolute positioning of the title */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.9); /* add drop shadow */
-  border: 2px solid white;
+  /*border: 2px solid white;*/
 }
 
 .item h1.title {
@@ -26,6 +27,7 @@
   left: 0;
   right: 0;
   margin: 0;
+
   padding: 2rem;
   opacity: 0; /* hide by default */
   transition: opacity 0.5s;
@@ -36,8 +38,6 @@
   opacity: 1; /* show title when expanded */
   font-size: 2rem;
   transition: opacity 0.5s; /* add transition effect */
-
-  
 }
 
 .group h1 {
@@ -49,6 +49,10 @@
 
 
 @media (max-width: 599px) {
+
+  .item {
+    height: 40vh;
+  }
 
   .item h1.title {
       font-size: 1rem !important;
@@ -76,4 +80,40 @@
   font-size: 3rem !important;
 }
 
+}
+
+.item a.btn-head {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: 1rem;
+  width: 10rem;
+  height: 3rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.btn-more:hover {
+  transform: scale(1.05);
+}
+
+
+.item a.btn-head {
+  opacity: 0; /* hide by default */
+  transition: opacity 0.5s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* add drop shadow */
+}
+
+
+.item.expanded a.btn-head {
+  opacity: 1; /* show title when expanded */
+  font-size: 2rem;
+  transition: opacity 0.5s; /* add transition effect */
+  cursor: pointer;
 }

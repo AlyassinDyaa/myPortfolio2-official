@@ -3,6 +3,7 @@ import "./hobbies.css"
 
 import HEAD from "./header/head"
 import HS from "./hobbySection/hs"
+import COMICS from "./COMICS/comics"
 
 
 const hobbies = () => {
@@ -10,6 +11,7 @@ const hobbies = () => {
     <div>
       <HEAD/>
       <HS/>
+      <COMICS/>
     </div>
   )
 }

@@ -1,0 +1,238 @@
+
+
+.container__hobbies-comics
+{
+    margin-top: 5rem;
+    background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, rgba(27, 39, 53, 0.9) 0%, rgba(9, 10, 15, 0.9) 100%);
+
+}
+
+.container__hobbies-comics_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container__hobbies-comics_header-text h1 {
+    font-size: 70px ;
+    margin: 2rem;
+  }
+  .container__hobbies-comics_header-text h2 {
+    margin: 2rem;
+  }
+  .container__hobbies-comics_header-text p {
+    margin: 2rem;
+  }
+
+  .container__hobbies-comics_header img {
+    height: 50%;
+    width: 50%;
+    margin: 2rem;
+  }
+  
+
+  /*************************************************/
+
+  .container__hobbies-comics-infinites
+  {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+
+  .container__hobbies-comics-infinites-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+  }
+  
+  .card-comics {
+    margin-right: 10px; /* optional spacing between cards */
+  }
+  
+ 
+  :root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+ 
+ 
+  .card-comics {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .card-comics:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  .wrapper::before,
+  .wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+  }
+  .wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  .wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  
+  .card-comics:hover .wrapper::before,
+  .wrapper::after {
+    opacity: 1;
+  }
+  
+  .card-comics:hover .wrapper::after {
+    height: 120px;
+  }
+  .title {
+    width: 100%;
+    transition: transform 0.5s;
+  }
+  .card-comics:hover .title {
+    transform: translate3d(0%, -50px, 100px);
+  }
+  
+  .character {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .card-comics:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+  }
+  
+
+  /* Small screens (phones) */
+@media only screen and (max-width: 600px) {
+    .container__hobbies-comics {
+      margin-top: 3rem;
+    }
+    
+    .container__hobbies-comics_header-text h1 {
+      font-size: 40px;
+      margin: 1rem;
+    }
+    .container__hobbies-comics_header-text h2,
+    .container__hobbies-comics_header-text p {
+      margin: 1rem 0.5rem;
+    }
+    .container__hobbies-comics_header img {
+     display: none;
+    }
+    .container__hobbies-comics-infinites h1
+    {
+        margin-left: 2rem;
+    }
+    .container__hobbies-comics-infinites-cards {
+        display: flex;
+        margin-top: 7rem !important;
+        margin-bottom: 7rem !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+        gap: 1rem;
+        height: fit-content;
+      }
+      
+      .card-comics {
+        width: calc(50% - 0.5rem);
+        height: var(--card-height);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 0 36px;
+        perspective: 2500px;
+      }
+      
+    :root {
+      --card-height: 200px;
+      --card-width: calc(var(--card-height) / 1.5);
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .container__hobbies-comics {
+      margin-top: 4rem;
+    }
+    .container__hobbies-comics_header-text h1 {
+      font-size: 50px;
+      margin: 1.5rem;
+    }
+    .container__hobbies-comics_header-text h2,
+    .container__hobbies-comics_header-text p {
+      margin: 1.5rem;
+    }
+    .container__hobbies-comics_header img {
+      height: 40%;
+      width: 40%;
+      margin: 1.5rem;
+    }
+    .container__hobbies-comics-infinites-cards {
+      margin: 3rem;
+    }
+    .card-comics {
+      width: var(--card-width);
+      height: var(--card-height);
+      margin: 0 30px;
+    }
+    :root {
+      --card-height: 250px;
+      --card-width: calc(var(--card-height) / 1.5);
+    }
+  }
+  

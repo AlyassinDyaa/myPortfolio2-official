@@ -10,6 +10,7 @@ import image5 from "../../../Assets/hobbiesList/writing.jpg"
 
 const Hs = () => {
   const [items, setItems] = useState([]);
+  
 
   const expand = (item, i) => {
     items.forEach((it, ind) => {
@@ -51,20 +52,24 @@ const Hs = () => {
             
             <div className="item" style={{ backgroundImage: `url(${image1})` }}>
               <h1 className="title">SWIMMING</h1>
-              
+              {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
             </div>
             <div className="item" style={{ backgroundImage: `url(${image2})` }}>
               <h1 className="title">TAE KWON DO</h1>
-            </div>
+              {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
+              </div>
             <div className="item" style={{ backgroundImage: `url(${image3})` }}>
               <h1 className="title">RUNNING</h1>
-            </div>
+              {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
+              </div>
             <div className="item" style={{ backgroundImage: `url(${image4})` }}>
-              <h1 className="title">COMICS, SCI FI</h1>
-            </div>
+              <h1 className="title">COMICS</h1>
+              {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
+              </div>
             <div className="item" style={{ backgroundImage: `url(${image5})` }}>
               <h1 className="title">READING</h1>
-            </div>
+              {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
+              </div>
     </div>
   );
 }
