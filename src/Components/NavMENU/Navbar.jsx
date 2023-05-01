@@ -24,10 +24,13 @@ const Navbar = () => {
           <Link to="/work" onClick={() => {  scrollToTop();} }>Work</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/edu" onClick={() => {  scrollToTop();} }>Education</Link>
+          <Link to="/education" onClick={() => {  scrollToTop();} }>Education</Link>
         </li>
         <li className="p__opensans">
           <Link to="/skills" onClick={() => {  scrollToTop();} }>Skills</Link>
+        </li>
+        <li className="p__opensans">
+          <Link to="/TEST" onClick={() => {  scrollToTop();} }>Solutions</Link>
         </li>
         <li className="p__opensans">
           <Link to="/hobbies" onClick={() => {  scrollToTop();} }>Hobbies</Link>
@@ -66,6 +69,11 @@ const Navbar = () => {
               <li>
                 <Link to="/skills" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Skills
+                </Link>
+              </li>
+              <li>
+                <Link to="/TEST" onClick={() => {setToggleMenu(false); scrollToTop()}}>
+                  Solutions
                 </Link>
               </li>
               <li>

@@ -39,6 +39,7 @@ body{
 
   .header_head
   {
+    margin-top: 2rem;
     color: white;
     display: flex;
     justify-content: center;

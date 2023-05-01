@@ -7,7 +7,6 @@ import PROJECT from "./PROJECTS/projects"
 const work = () => {
   return (
     <div>
-        WORK
         <TIME/>
         <PROJECT/>
     </div>

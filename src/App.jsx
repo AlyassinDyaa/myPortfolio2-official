@@ -7,7 +7,7 @@ import MAIN from "./CONTAINERS/HOME/main"
 import WORK from "./CONTAINERS/WORK/work"
 import EDUCATION from "./CONTAINERS/EDUCATION/edu"
 import HOBBIES from "./CONTAINERS/HOBBIES/hobbies"
-
+import TEST from "./CONTAINERS/TESTIMONIALS/testimonials"
 import CONTACT from "./CONTAINERS/CONTACT/contact"
 import FOOTER from "./CONTAINERS/FOOTER/footer"
 
@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/" element={<MAIN />} />
         <Route path="/Work" element={<WORK />} />
         <Route path="/Education" element={<EDUCATION/>} />
+        <Route path="/TEST" element={<TEST/>} />
         <Route path="/Hobbies" element={<HOBBIES/>} />
       </Routes>
 
