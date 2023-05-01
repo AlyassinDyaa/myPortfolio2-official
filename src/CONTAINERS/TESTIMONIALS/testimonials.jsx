@@ -9,8 +9,8 @@ const testimonials = () => {
   return (
     <div id='TEST'>
       <DS/>
-      <TEST/>
       <SERVICES/>
+      <TEST/>
     </div>
   )
 }
