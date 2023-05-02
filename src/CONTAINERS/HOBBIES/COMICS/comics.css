@@ -148,7 +148,9 @@
   
   .card-comics:hover .character {
     opacity: 1;
-    transform: translate3d(0%, -30%, 100px);
+    transform: translate3d(0%, 0%, 100px);
+    height: 350px;
+    
   }
   
 

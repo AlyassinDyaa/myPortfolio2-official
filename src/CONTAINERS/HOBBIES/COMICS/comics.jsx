@@ -2,6 +2,10 @@ import React from 'react'
 import "./comics.css"
 
 import image from "../../../Assets/c.jpg"
+import unisonBackground from "../../../Assets/infinites/unisonB.png"
+import unison from "../../../Assets/infinites/Unison0.png"
+import orephicBckgrounf from "../../../Assets/infinites/o2.png"
+import orephic from "../../../Assets/infinites/o4.png"
 
 const comics = () => {
   return (
@@ -24,18 +28,18 @@ const comics = () => {
                 <div className='container__hobbies-comics-infinites-cards'>
                     <div class="card-comics">
                             <div class="wrapper">
-                            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg" class="cover-image" />
+                            <img src={orephicBckgrounf} class="cover-image" />
                             </div>
-                            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />
-                            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp" class="character" />
+                            <h1></h1>
+                            <img src={""} class="character" />
                         </div>
                     
                         <div class="card-comics">
                             <div class="wrapper">
-                            <img src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg" class="cover-image" />
+                            <img src={unisonBackground} class="cover-image" />
                             </div>
-                            <img src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png" class="title" />
-                            <img src="https://ggayane.github.io/css-experiments/cards/force_mage-character.webp" class="character" />
+                            <h1 className='title'>UNISON</h1>
+                            <img src={"unison"} class="character" />
                         </div>
 
                         <div class="card-comics">

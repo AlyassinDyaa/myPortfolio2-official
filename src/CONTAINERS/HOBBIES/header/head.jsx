@@ -17,10 +17,11 @@ const head = () => {
                       <div class='layer-0 layer' data-depth='0.20' data-type='parallax'></div>
                       <div class='layer-1 layer' data-depth='0.50' data-type='parallax'></div>
                       <div class='layer-2 layer' data-depth='0.50' data-type='parallax'></div>
-                      <div class='layer-3 layer' data-depth='0.80' data-type='parallax'></div>
-                      <div class='layer-4 layer' data-depth='0.95' data-type='parallax'></div>
+                      <div class='layer-3 layer' data-depth='0.50' data-type='parallax'></div>
+                      <div class='layer-4 layer' data-depth='0.80' data-type='parallax'></div>
+                      <div class='layer-5 layer' data-depth='0.95' data-type='parallax'></div>
                       <div class='layer-overlay layer' data-depth='0.85' data-type='parallax'></div>
-                      <div class='layer-5 layer' data-depth='1.00' data-type='parallax'></div>
+                      <div class='layer-6 layer' data-depth='1.00' data-type='parallax'></div>
                 </div>
 
 

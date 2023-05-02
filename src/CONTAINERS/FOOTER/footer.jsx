@@ -5,6 +5,9 @@ const footer = () => {
   return (
     <div>
       FOOTER
+      <div>
+        
+      </div>
     </div>
   )
 }
