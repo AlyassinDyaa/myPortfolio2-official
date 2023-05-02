@@ -74,22 +74,36 @@
   
  
   
-  .layer-2 {
+  .layer-1 {
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_02.png");
   }
   
+  .layer-2 {
+    background-image: url("../../../Assets//infinites/o3.png");
+    background-size: 40%;
+    padding-top: 5rem;
+    background-position: right
+  }
+  
   .layer-3 {
+    background-image: url("../../../Assets//infinites/Lazron.png");
+    background-size: 40%;
+    padding-top: 6rem !important;
+    background-position: left;
+  }
+  
+  .layer-4 {
     background-image: url("../../../Assets//infinites/unisonmasked.png");
     background-size: 30%;
     padding-right: 3rem;
     
   }
-  .layer-4 {
+  .layer-5 {
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_02.png");
 }
   
 
-  .layer-5 {
+  .layer-6 {
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png");
   }
 

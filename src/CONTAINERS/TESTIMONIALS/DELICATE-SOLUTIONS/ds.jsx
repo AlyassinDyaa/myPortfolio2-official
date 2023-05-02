@@ -3,7 +3,7 @@ import "./ds.css"
 
 const ds = () => {
   return (
-    <div>
+    <div id='DS'>
       DELICATE SOLUTIONS
     </div>
   )
