@@ -66,15 +66,11 @@ const Contact = () => {
          <h1>Phone: +1 518 952 5899</h1>
          <h1>Address: Niskayuna 12309, NY</h1>
  
+ {/* 
          <div className='socialmedia'>
-            <BsFacebook style={{ fontSize: '30px' }} />
-            <AiFillInstagram style={{ fontSize: '30px' }} />
-            <GiOverInfinity style={{ fontSize: '30px' }} />
-            <SiFreelancer style={{ fontSize: '30px' }} />
-            <BsLinkedin style={{ fontSize: '30px' }} />
-            <BsGithub style={{ fontSize: '30px' }} />
+            
          </div>
-
+*/}
 
        </div>
      </div>

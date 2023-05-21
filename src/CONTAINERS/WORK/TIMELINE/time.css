@@ -11,7 +11,13 @@ body{
 
 }
   
-  
+  .container__timeline
+  {
+    padding: 2rem;
+    background-image: url('../../../Assets//Background/blob2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   /* -------------------------------- 
   
   Modules - reusable parts of our design

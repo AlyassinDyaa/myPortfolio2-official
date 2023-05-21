@@ -1,4 +1,9 @@
-
+.workClass
+{
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
   
   .container__work-title
   {

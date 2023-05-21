@@ -6,6 +6,11 @@
   --font-serif: "Cardo", serif;
 }
 
+.container__section
+{
+  margin-bottom: 3rem;
+}
+
 .container__section h1{
   display: flex;
   justify-content: center;
