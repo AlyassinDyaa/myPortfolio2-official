@@ -22,7 +22,7 @@ const time = () => {
 			</div> 
 
 			<div class="cd-timeline-content">
-				<h2 style={{fontSize: 25}}>OPtical Technician</h2>
+				<h2 style={{fontSize: 25}}>Optical Technician</h2>
 				<h3>New York Optical</h3>
                 <p>Conduct autorefraction and use NCT machine to assist the doctor in the patient examination process
 						Schedule appointments, manage patient records and maintain the EMR system
@@ -30,7 +30,7 @@ const time = () => {
 						Provide exceptional customer service and ensure a positive experience for all patients
 						Collaborate with the healthcare team to ensure efficient and effective patient care	</p>
 				<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>
-				<span class="cd-date">07/2022 - Present</span>
+				<span class="cd-date">07/2022 - 06/2023</span>
 			</div> 
 		</div>
 
