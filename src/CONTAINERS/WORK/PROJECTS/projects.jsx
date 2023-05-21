@@ -171,7 +171,7 @@ function Work() {
     <div id='work' className='workClass'>
       
       <div className='container__work' >
-        <h1 className='container__work-title'> PROJECTS </h1>
+        <h1 className='container__work-title'> WEB Based PROJECTS </h1>
         <h2 className='container__work-sub'> See Demos belows</h2>
       </div>
 

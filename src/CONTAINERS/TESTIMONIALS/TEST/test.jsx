@@ -9,48 +9,48 @@ const test = () => {
 
 
                 <figure class="snip1157">
-                  <blockquote>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I wonder why we think faster than we speak. Hobbes: Probably so we can think twice.
+                  <blockquote>I am amazed by the sleek design and user-friendly interface of the website. It has greatly enhanced our online presence and improved user engagement. The team behind this project did an excellent job in understanding our requirements and delivering a top-notch solution. Highly recommended
                     <div class="arrow"></div>
                   </blockquote>
 
                   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
                   <div class="author">
-                    <h5>Pelican Steve <span> LIttleSnippets.net</span></h5>
+                    <h5>Mohammad Ali <span></span></h5>
                   </div>
                 </figure>
 
               <figure class="snip1157 hover">
-                <blockquote>Thank you. before I begin, I'd like everyone to notice that my report is in a professional, clear plastic binder...When a report looks this good, you know it'll get an A. That's a tip kids. Write it down.
+                <blockquote>This app has completely transformed the way we manage our tasks. It's intuitive, efficient, and packed with useful features. The developers have done a fantastic job in creating a seamless user experience. It has significantly increased our productivity and made our lives so much easier. 
                   <div class="arrow"></div>
                 </blockquote>
 
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample27.jpg" alt="sq-sample27" />
                 <div class="author">
-                  <h5>Max Conversion<span> LIttleSnippets.net</span></h5>
+                  <h5>Waleed Nemreeny<span> </span></h5>
                 </div>
               </figure>
 
 
               <figure class="snip1157">
-                <blockquote>My behaviour is addictive functioning in a disease process of toxic co-dependency. I need holistic healing and wellness before I'll accept any responsibility for my actions.
+                <blockquote>"I am thrilled with the website created by D'Yaa. They captured the essence of our brand and translated it into a captivating online presence. The website is visually stunning, responsive, and showcases our products/services beautifully. The team's professionalism and prompt communication made the entire process seamless. We highly recommend their web development services.
                   <div class="arrow"></div>
                 </blockquote>
 
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="sq-sample17" />
                 <div class="author">
-                  <h5>Eleanor Faint<span> LIttleSnippets.net</span></h5>
+                  <h5>Omar Latifeh<span> </span></h5>
                 </div>
               </figure>
 
 
               <figure class="snip1157">
-                  <blockquote>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I wonder why we think faster than we speak. Hobbes: Probably so we can think twice.
+                  <blockquote>Working with  D'yaa on our mobile app was a fantastic experience. They guided us through every step of the development process, from ideation to launch. The app they delivered is sleek, functional, and performs flawlessly across different devices. Their commitment to quality and customer satisfaction is evident in the final product. We are delighted with the results!
                     <div class="arrow"></div>
                   </blockquote>
 
                   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
                   <div class="author">
-                    <h5>Pelican Steve <span> LIttleSnippets.net</span></h5>
+                    <h5>Mohammad AlSaleh <span> </span></h5>
                   </div>
                 </figure>
           </div>

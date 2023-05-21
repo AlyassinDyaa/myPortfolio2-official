@@ -15,6 +15,24 @@ const time = () => {
 
 	<section id="cd-timeline" class="cd-container">
 
+	<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture"/>
+			</div> 
+
+			<div class="cd-timeline-content">
+				<h2 style={{fontSize: 25}}>Software Developer</h2>
+				<h3>New York State  Division of Human Rights </h3>
+                <p>Direct the development and implementation of various lT systems ensuring compliance with security standards, methods and project schedules and other objectives and ensuring that appropriate resources are available to complete the project.
+					Oversee the maintenance of the agency Case Management System (CMS); identifying enhancement opportunities and overseeing programming staff development and implementation of same. Ensure compatibility with other programs and platforms consistent with software upgrade.
+					Meet with Information Technology program management and customers to determine technical needs, requirements, program priorities and implementation approaches.
+					Coordinate the development and implementation of all agency Information Systems, to ensure that the agency needs are adequately addressed within the framework of the State's coordinated information technology strategies.
+					Communicate and enforce ITS policy, standards, and Procedures for all areas of Information Technology operation at the customer agency.</p>
+				<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>
+				<span class="cd-date">06/2023 - Present</span>
+			</div> 
+		</div>
+
 
 	<div class="cd-timeline-block">
 			<div class="cd-timeline-img cd-picture">
@@ -29,7 +47,7 @@ const time = () => {
 						Handle incoming phone calls to address patient inquiries and resolve issues in a timely and professional manner
 						Provide exceptional customer service and ensure a positive experience for all patients
 						Collaborate with the healthcare team to ensure efficient and effective patient care	</p>
-				<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>
+				<a href="#" class="btn-head">MORE</a>
 				<span class="cd-date">07/2022 - 06/2023</span>
 			</div> 
 		</div>

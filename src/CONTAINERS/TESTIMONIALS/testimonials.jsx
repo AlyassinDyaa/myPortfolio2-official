@@ -15,7 +15,7 @@ const testimonials = () => {
       
       <DS/>
       <SERVICES/>
-      <TEST/>
+      
     </div>
   )
 }

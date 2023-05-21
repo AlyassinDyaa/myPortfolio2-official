@@ -79,21 +79,21 @@
   }
   
   .layer-2 {
-    background-image: url("../../../Assets//infinites/o3.png");
+    background-image: url("../../../Assets//infinites/resized/o3.png");
     background-size: 40%;
     padding-top: 5rem;
     background-position: right
   }
   
   .layer-3 {
-    background-image: url("../../../Assets//infinites/Lazron.png");
+    background-image: url("../../../Assets//infinites/resized/Lazron.png");
     background-size: 40%;
     padding-top: 6rem !important;
     background-position: left;
   }
   
   .layer-4 {
-    background-image: url("../../../Assets//infinites/unisonmasked.png");
+    background-image: url("../../../Assets//infinites/resized/unisonmasked.png");
     background-size: 30%;
     padding-right: 3rem;
     

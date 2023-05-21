@@ -17,29 +17,19 @@ const footer = () => {
 
   <div class="footer-right">
 
-    <a href="#"><BsFacebook/></a>
-    <a href="#"><AiFillInstagram/></a>
-    <a href="#"><GiOverInfinity/></a>
+    <a href="https://www.facebook.com/dyaa.alyassin/"><BsFacebook/></a>
+    <a href="https://www.instagram.com/dyaa_alyassin/"><AiFillInstagram/></a>
+    <a href="https://www.instagram.com/infinity_comicss/"><GiOverInfinity/></a>
     <a href="#"><SiFreelancer/></a>
-    <a href="#"><BsLinkedin/></a>
-    <a href="#"><BsGithub/></a>
+    <a href="https://www.linkedin.com/in/d-yaa-a-1b56b9144/"><BsLinkedin/></a>
+    <a href="https://github.com/AlyassinDyaa"><BsGithub/></a>
 
   </div>
 
   <div class="footer-left">
 
     <p class="footer-links">
-      <a class="link-1" href="#"> Home</a>
-
-      <a href="#"> Work</a>
-
-      <a href="#"> Education</a>
-
-      <a href="#"> Skills</a>
-
-      <a href="#"> Services</a>
-
-      <a href="#"> Hobbies</a>
+      <h3>D'Yaa Alyassin Portfolio</h3>
     </p>
 
     <p>Delicate Solutions &copy; 2023</p>

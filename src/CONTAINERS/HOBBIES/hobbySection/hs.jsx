@@ -70,6 +70,10 @@ const Hs = () => {
               <h1 className="title">READING</h1>
               {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
               </div>
+            <div className="item" style={{ backgroundImage: `url(${image5})` }}>
+              <h1 className="title">Gaming</h1>
+              {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
+              </div>
     </div>
   );
 }

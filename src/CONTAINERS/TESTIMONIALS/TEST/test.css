@@ -1,5 +1,6 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+
 figure.snip1157 {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
@@ -13,12 +14,14 @@ figure.snip1157 {
   box-shadow: none !important;
   margin-bottom: 7rem;
 }
+
 figure.snip1157 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
   transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
+
 figure.snip1157 img {
   max-width: 100%;
   vertical-align: middle;
@@ -27,6 +30,7 @@ figure.snip1157 img {
   border-radius: 50%;
   margin: 40px 0 0 10px;
 }
+
 figure.snip1157 blockquote {
   display: block;
   border-radius: 8px;
@@ -39,6 +43,7 @@ figure.snip1157 blockquote {
   line-height: 1.6em;
   font-style: italic;
 }
+
 figure.snip1157 blockquote:before,
 figure.snip1157 blockquote:after {
   font-family: 'FontAwesome';
@@ -48,15 +53,18 @@ figure.snip1157 blockquote:after {
   opacity: 0.3;
   font-style: normal;
 }
+
 figure.snip1157 blockquote:before {
   top: 25px;
   left: 20px;
 }
+
 figure.snip1157 blockquote:after {
   content: "\201D";
   right: 20px;
   bottom: 0;
 }
+
 figure.snip1157 .arrow {
   top: 100%;
   width: 0;
@@ -67,6 +75,7 @@ figure.snip1157 .arrow {
   margin: 0;
   position: absolute;
 }
+
 figure.snip1157 .author {
   position: absolute;
   bottom: 45px;
@@ -77,114 +86,127 @@ figure.snip1157 .author {
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
 }
+
 figure.snip1157 .author h5 {
   opacity: 0.8;
   margin: 0;
   font-weight: 800;
 }
+
 figure.snip1157 .author h5 span {
   font-weight: 400;
   text-transform: none;
   padding-left: 5px;
 }
 
-
-
-.container__test
-{
-    background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 6rem ;
+.container__test {
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6rem;
 }
 
-.container__test h1{
-    font-size: 3rem ;
-    padding-bottom: 3rem;
+.container__test h1 {
+  font-size: 3rem;
+  padding-bottom: 3rem;
 }
 
-.container__test-feedback
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.container__test-feedback {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-
 
 /* CSS for screens with a maximum width of 768px (tablets) */
 
 @media only screen and (max-width: 768px) {
-    figure.snip1157 {
-      max-width: 50%;
-      margin: 0;
-    }
-    figure.snip1157 img {
-      margin: 20px 0 0 10px;
-      height: 60px;
-      width: 60px;
-    }
-    figure.snip1157 blockquote {
-      padding: 20px 40px 25px 40px;
-      font-size: 0.7em;
-      margin-top: 2rem;
-    }
-    figure.snip1157 blockquote:before,
-    figure.snip1157 blockquote:after {
-      font-size: 40px;
-    }
-    figure.snip1157 .arrow {
-      border-right: 15px solid transparent;
-      border-top: 15px solid #fafafa;
-    }
-    figure.snip1157 .author {
-      bottom: 25px;
-      padding: 0 10px 0 80px;
-    }
-    figure.snip1157 .author h5 {
-      font-size: 0.9em;
-    }
+  .container__test-feedback {
+    flex-wrap: wrap;
   }
-  
-  /* CSS for screens with a maximum width of 480px (mobile devices) */
-  
-  @media only screen and (max-width: 480px) {
-    .container__test {
-      padding-top: 3rem;
-    }
-    .container__test h1 {
-      font-size: 2rem;
-      padding-bottom: 2rem;
-    }
-    .container__test-feedback {
-      flex-direction: column;
-      justify-content: center;
-    }
-    figure.snip1157 img {
-      margin: 20px 0 0 20px;
-      height: 50px;
-      width: 50px;
-    }
-    figure.snip1157 blockquote {
-      padding: 20px;
-      font-size: 0.7em;
-    }
-    figure.snip1157 blockquote:before,
-    figure.snip1157 blockquote:after {
-      font-size: 30px;
-    }
-    figure.snip1157 .arrow {
-      border-right: 10px solid transparent;
-      border-top: 10px solid #fafafa;
-    }
-    figure.snip1157 .author {
-      bottom: 10px;
-      padding: 0 10px 0 60px;
-      text-align: center;
-    }
-    figure.snip1157 .author h5 {
-      font-size: 0.8em;
-    }
+
+  figure.snip1157 {
+    margin-left: 3.5rem !important;
+    margin-bottom: 2rem;
+    flex-basis: calc(50% - 20px);
+    margin: 10px;
   }
-  
+
+  figure.snip1157 img {
+    margin: 20px 0 0 10px;
+    height: 60px;
+    width: 60px;
+  }
+
+  figure.snip1157 blockquote {
+    padding: 20px 40px 25px 40px;
+    font-size: 0.7em;
+    margin-top: 2rem;
+  }
+
+  figure.snip1157 blockquote:before,
+  figure.snip1157 blockquote:after {
+    font-size: 40px;
+  }
+
+  figure.snip1157 .arrow {
+    border-right: 15px solid transparent;
+    border-top: 15px solid #fafafa;
+  }
+
+  figure.snip1157 .author {
+    bottom: 25px;
+    padding: 0 10px 0 80px;
+  }
+
+  figure.snip1157 .author h5 {
+    font-size: 0.9em;
+  }
+}
+
+/* CSS for screens with a maximum width of 480px (mobile devices) */
+
+@media only screen and (max-width: 480px) {
+
+  figure.snip1157 {
+    margin-bottom: 3rem;
+  }
+
+  .container__test {
+    padding-top: 3rem;
+  }
+  .container__test h1 {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+  .container__test-feedback {
+    flex-direction: column;
+    justify-content: center;
+  }
+  figure.snip1157 img {
+    margin: 2rem;
+    height: 50px;
+    width: 50px;
+  }
+  figure.snip1157 blockquote {
+    padding: 20px;
+    font-size: 0.7em;
+  }
+  figure.snip1157 blockquote:before,
+  figure.snip1157 blockquote:after {
+    font-size: 30px;
+  }
+  figure.snip1157 .arrow {
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fafafa;
+  }
+  figure.snip1157 .author {
+    bottom: 10px;
+    padding: 0 10px 0 60px;
+    text-align: center;
+  }
+  figure.snip1157 .author h5 {
+    font-size: 0.8em;
+  }
+}
