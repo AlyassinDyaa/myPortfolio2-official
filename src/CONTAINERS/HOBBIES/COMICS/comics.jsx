@@ -14,8 +14,8 @@ const comics = () => {
 
                 <div className='container__hobbies-comics_header'>
                     <div className='container__hobbies-comics_header-text'>
-                        <h1>TITLE</h1>
-                        <h2>Sub Title</h2>
+                        <h1>INFINITES</h1>
+                        <h2>INTO ENTROPY</h2>
                         <p>HELLLOOOO WORLD</p>
                     </div>
                 <img src={image}/>

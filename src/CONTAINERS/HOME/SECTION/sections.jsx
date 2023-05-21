@@ -12,6 +12,7 @@ const Sections = () => {
     const [goToEDU, setGoToEDU] = React.useState(false);
     const [goToSkills, setGoToSkills] = React.useState(false);
     const [goToHobbies, setGoToHobbies] = React.useState(false);
+    const [goToServices, setGoToservices] = React.useState(false);
 
     if (goToWork) {
       return <Navigate to="/work" />;
@@ -24,6 +25,9 @@ const Sections = () => {
     }
     if (goToHobbies) {
       return <Navigate to="/hobbies" />;
+    }
+    if (goToServices) {
+      return <Navigate to="/TEST" />;
     }
 
 
@@ -64,12 +68,20 @@ const Sections = () => {
 
           <div class="card">
             <div class="content">
+              <h2 class="title">SERVICES</h2>
+              <p class="copy">Comprehensive services encompassing website design, development, and implementation.</p>
+              <button class="btn-head" onClick={() => {setGoToservices(true);  scrollToTop();}}>Lets Go</button>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="content">
               <h2 class="title">HOBBIES</h2>
               <p class="copy">Peek into my interests and hobbies in the hobbies section of my portfolio website..</p>
               <button class="btn-head" onClick={() => {setGoToHobbies(true);  scrollToTop();}}>Lets Go</button>
             </div>
           </div>
-
     
       </main>
     </div>

@@ -18,8 +18,9 @@
   display: inline-block;
   cursor: pointer;
   position: relative; /* needed for absolute positioning of the title */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.9); /* add drop shadow */
   /*border: 2px solid white;*/
+    /* Add glow border */
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4), 0 0 5px 5px rgba(27, 27, 27, 0.5);
 }
 
 .item h1.title {

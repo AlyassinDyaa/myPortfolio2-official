@@ -102,9 +102,11 @@
   background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
 }
 .card:nth-child(4):before {
+  background-image: url("../../../Assets/services3.jpg")
+}
+.card:nth-child(5):before {
   background-image: url("../../../Assets/comics.jpg")
 }
-
 .content {
   position: relative;
   display: flex;
