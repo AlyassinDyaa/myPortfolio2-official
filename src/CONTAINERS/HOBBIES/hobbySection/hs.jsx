@@ -8,6 +8,9 @@ import image3 from "../../../Assets/hobbiesList/highRes/running.jpg"
 import image4 from "../../../Assets/hobbiesList/highRes/dcomics.jpg"
 import image5 from "../../../Assets/hobbiesList/highRes/gaming.jpg"
 import image6 from "../../../Assets/hobbiesList/swimming2.jpg"
+import image7 from "../../../Assets/hobbiesList/soccer.jpg"
+
+
 const Hs = () => {
   const [items, setItems] = useState([]);
   
@@ -68,6 +71,10 @@ const Hs = () => {
               </div>
             <div className="item" style={{ backgroundImage: `url(${image5})` }}>
               <h1 className="title">Gaming</h1>
+              {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
+              </div>
+            <div className="item" style={{ backgroundImage: `url(${image7})` }}>
+              <h1 className="title">Soccer</h1>
               {/*<a href="https://www.newyorkoptical.com/" class="btn-head">MORE</a>*/}
               </div>
     </div>

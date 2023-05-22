@@ -2,24 +2,23 @@
 .group {
   text-align: center;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden; /* Use "auto" instead of "hidden" to enable horizontal scrolling */
+  padding: 0 1vw; /* Add margin on the left and right */
   min-height: 120vh;
   background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, rgba(27, 39, 53, 0.9) 0%, rgba(9, 10, 15, 0.9) 100%);
-
 }
 
+
 .item {
-  width: 15vw;
+  width: 13vw;
   height: 75vh;
   background-position: center;
-  background-size: cover; /* or contain */
-  margin: 1vw;
+  background-size: cover;
+  margin: 0 0.5vw; /* Add margin on the left and right */
   border-radius: 3vw;
   display: inline-block;
   cursor: pointer;
-  position: relative; /* needed for absolute positioning of the title */
-  /*border: 2px solid white;*/
-    /* Add glow border */
+  position: relative;
   box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4), 0 0 5px 5px rgba(27, 27, 27, 0.5);
 }
 
@@ -52,12 +51,15 @@
 
 @media (max-width: 599px) {
 
+    .group{
+      min-height: 70vh;
+    }
   .item {
-    height: 40vh;
+    height: 50vh;
   }
 
   .item h1.title {
-      font-size: 1rem !important;
+      font-size: 1.6rem !important;
   }
 
   .group h1 {

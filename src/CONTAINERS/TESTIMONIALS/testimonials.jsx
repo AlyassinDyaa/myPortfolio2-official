@@ -9,7 +9,7 @@ import SERVICES from "./SERVICES/services"
 
 const testimonials = () => {
   return (
-    <div id='TEST' id="services">
+    <div id='TEST'>
 
       <FLOATNav/>
       

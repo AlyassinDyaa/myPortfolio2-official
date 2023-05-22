@@ -66,15 +66,15 @@ const Contact = () => {
          <h1>Phone: +1 518 952 5899</h1>
          <h1>Address: Niskayuna 12309, NY</h1>
  
-
-         <div className='socialmedia'>
+{/* <div className='socialmedia'>
            <a href="https://www.facebook.com/dyaa.alyassin/"><BsFacebook/></a>
           <a href="https://www.instagram.com/dyaa_alyassin/"><AiFillInstagram/></a>
           <a href="https://www.instagram.com/infinity_comicss/"><GiOverInfinity/></a>
           <a href="#"><SiFreelancer/></a>
           <a href="https://www.linkedin.com/in/d-yaa-a-1b56b9144/"><BsLinkedin/></a>
           <a href="https://github.com/AlyassinDyaa"><BsGithub/></a>
-         </div>
+         </div> */}
+        
 
 
        </div>

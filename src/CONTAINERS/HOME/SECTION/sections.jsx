@@ -1,13 +1,19 @@
 import React from 'react'
 import "./sections.css"
 import { Navigate } from "react-router-dom";
+import { animateScroll as scroll } from 'react-scroll';
 
 
-const scrollToTop = () => window.scrollTo(0, 0);
+
 
 
 const Sections = () => {
 
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
+  
     const [goToWork, setGoToWork] = React.useState(false);
     const [goToEDU, setGoToEDU] = React.useState(false);
     const [goToSkills, setGoToSkills] = React.useState(false);
