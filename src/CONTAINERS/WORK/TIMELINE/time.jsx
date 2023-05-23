@@ -6,6 +6,7 @@ const scrollToTop = () => window.scrollTo(0, 0);
 const time = () => {
   return (
     <div className='container__timeline'>
+		
       <header className='headONE'>
 	  <h1 className='header_head'>EXPERIENCE</h1>
 		</header>
