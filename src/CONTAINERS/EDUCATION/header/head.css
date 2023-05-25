@@ -4,6 +4,30 @@
   padding: 0;
 }
 
+.container__education-header {
+  position: relative;
+}
+
+.container__education-header .btn-head {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.container__education-header .btn-head:nth-child(2) {
+  right: 10px; /* Adjust the value to position the "Previous" button */
+}
+
+.container__education-header .btn-head:nth-child(1) {
+  left: 10px; /* Adjust the value to position the "Next" button */
+}
+
+
+
+
+
 
 
 .skw-pages {
@@ -95,13 +119,14 @@
   color: #FFA0A0;
 }
 .skw-page-1 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-1.jpg");
+  background-image: url("../../../Assets/just.jpg");
 }
 .skw-page-1 .skw-page__half--right .skw-page__content {
-  background: #292929;
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+
 }
 .skw-page-2 .skw-page__half--left .skw-page__content {
-  background: #292929;
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 .skw-page-2 .skw-page__half--right .skw-page__content {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg");
@@ -110,10 +135,10 @@
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg");
 }
 .skw-page-3 .skw-page__half--right .skw-page__content {
-  background: #292929;
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 .skw-page-4 .skw-page__half--left .skw-page__content {
-  background: #292929;
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 .skw-page-4 .skw-page__half--right .skw-page__content {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg");
@@ -122,5 +147,5 @@
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg");
 }
 .skw-page-5 .skw-page__half--right .skw-page__content {
-  background: #292929;
+  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }

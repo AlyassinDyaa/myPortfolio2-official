@@ -6,23 +6,24 @@ import JUSTB from "../../../Assets/edu/background.png";
 
 const Head = () => {
   const [curPage, setCurPage] = useState(1);
-  const numOfPages = $(".skw-page").length;
+  const numOfPages = 5; // Total number of pages
 
   const navigateUp = () => {
-    if (curPage === 1) {
-      setCurPage(numOfPages); // Loop to the last page
-    } else {
+    if (curPage > 1) {
       setCurPage(prevPage => prevPage - 1);
     }
   };
 
   const navigateDown = () => {
-    if (curPage === numOfPages) {
-      setCurPage(1); // Loop to the first page
-    } else {
+    if (curPage < numOfPages) {
       setCurPage(prevPage => prevPage + 1);
     }
   };
+
+  useEffect(() => {
+    $(".skw-page").removeClass("active");
+    $(`.skw-page-${curPage}`).addClass("active");
+  }, [curPage]);
 
   useEffect(() => {
     // Your jQuery code here
@@ -36,11 +37,6 @@ const Head = () => {
       });
     });
   }, []);
-
-  useEffect(() => {
-    $(".skw-page").removeClass("active");
-    $(`.skw-page-${curPage}`).addClass("active");
-  }, [curPage]);
 
   return (
     <div className="container__education-header">
@@ -102,10 +98,48 @@ const Head = () => {
             </div>
           </div>
         </div>
+
+        <div className={`skw-page skw-page-4 ${curPage === 4 ? 'active' : ''}`}>
+          {/* Page 4 content */}
+          <div class="skw-page skw-page-4">
+            <div class="skw-page__half skw-page__half--left">
+              <div class="skw-page__skewed">
+                <div class="skw-page__content">
+                  <h2 class="skw-page__heading">Page 4</h2>
+                  <p class="skw-page__description">Nothing to do here, continue scrolling.</p>
+                </div>
+              </div>
+            </div>
+            <div class="skw-page__half skw-page__half--right">
+              <div class="skw-page__skewed">
+                <div class="skw-page__content"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`skw-page skw-page-5 ${curPage === 5 ? 'active' : ''}`}>
+          {/* Page 5 content */}
+          <div class="skw-page skw-page-5">
+            <div class="skw-page__half skw-page__half--left">
+              <div class="skw-page__skewed">
+                <div class="skw-page__content"></div>
+              </div>
+            </div>
+            <div class="skw-page__half skw-page__half--right">
+              <div class="skw-page__skewed">
+                <div class="skw-page__content">
+                  <h2 class="skw-page__heading">Page 5</h2>
+                  <p class="skw-page__description">The end is near, I promise!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <button  className = "btn-head" onClick={navigateUp}>Previous</button>
-      <button className = "btn-head" onClick={navigateDown}>Next</button>
+      <button className="btn-head" onClick={navigateDown}>Next</button>
+      <button className="btn-head" onClick={navigateUp}>Previous</button>
     </div>
   );
 };
