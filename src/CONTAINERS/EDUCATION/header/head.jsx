@@ -5,34 +5,33 @@ import JUST from "../../../Assets/edu/just.mp4";
 import JUSTB from "../../../Assets/edu/background.png";
 
 const Head = () => {
-  const [curPage, setCurPage] = useState(1);
+  const [curPage, setCurPage] = useState(1); // State variable for current page
   const numOfPages = 5; // Total number of pages
 
   const navigateUp = () => {
     if (curPage > 1) {
-      setCurPage(prevPage => prevPage - 1);
+      setCurPage(prevPage => prevPage - 1); // Decrease current page by 1
     }
   };
 
   const navigateDown = () => {
     if (curPage < numOfPages) {
-      setCurPage(prevPage => prevPage + 1);
+      setCurPage(prevPage => prevPage + 1); // Increase current page by 1
     }
   };
 
   useEffect(() => {
-    $(".skw-page").removeClass("active");
-    $(`.skw-page-${curPage}`).addClass("active");
+    $(".skw-page").removeClass("active"); // Remove 'active' class from all pages
+    $(`.skw-page-${curPage}`).addClass("active"); // Add 'active' class to the current page
   }, [curPage]);
 
   useEffect(() => {
-    // Your jQuery code here
     $(document).ready(() => {
       $(document).on("keydown", e => {
-        if (e.which === 38) {
-          navigateUp();
-        } else if (e.which === 40) {
-          navigateDown();
+        if (e.which === 38) { // Key up arrow
+          navigateUp(); // Call navigateUp function
+        } else if (e.which === 40) { // Key down arrow
+          navigateDown(); // Call navigateDown function
         }
       });
     });
@@ -42,8 +41,8 @@ const Head = () => {
     <div className="container__education-header">
       <div className="skw-pages">
         {/* Remaining code for pages */}
+        {/* Page 1 */}
         <div className={`skw-page skw-page-1 ${curPage === 1 ? 'active' : ''}`}>
-          {/* Page 1 content */}
           <div class="skw-page skw-page-1 active">
             <div class="skw-page__half skw-page__half--left">
               <div class="skw-page__skewed">
@@ -59,7 +58,7 @@ const Head = () => {
 
                   <div className='education_buttons'>
                     <button className='button-download' style={{margin : 10}}>Diploma</button>
-                     <button className='button-download'>Evaluated transcript</button>
+                    <button className='button-download'>Evaluated transcript</button>
                   </div>
                 
                   <a href="https://www.just.edu.jo/Pages/Default.aspx"
@@ -71,8 +70,8 @@ const Head = () => {
           </div>
         </div>
 
+        {/* Page 2 */}
         <div className={`skw-page skw-page-2 ${curPage === 2 ? 'active' : ''}`}>
-          {/* Page 2 content */}
           <div class="skw-page skw-page-2">
             <div class="skw-page__half skw-page__half--left">
               <div class="skw-page__skewed">
@@ -90,8 +89,8 @@ const Head = () => {
           </div>
         </div>
 
+        {/* Page 3 */}
         <div className={`skw-page skw-page-3 ${curPage === 3 ? 'active' : ''}`}>
-          {/* Page 3 content */}
           <div class="skw-page skw-page-3">
             <div class="skw-page__half skw-page__half--left">
               <div class="skw-page__skewed">
@@ -109,8 +108,8 @@ const Head = () => {
           </div>
         </div>
 
+        {/* Page 4 */}
         <div className={`skw-page skw-page-4 ${curPage === 4 ? 'active' : ''}`}>
-          {/* Page 4 content */}
           <div class="skw-page skw-page-4">
             <div class="skw-page__half skw-page__half--left">
               <div class="skw-page__skewed">
@@ -128,8 +127,8 @@ const Head = () => {
           </div>
         </div>
 
+        {/* Page 5 */}
         <div className={`skw-page skw-page-5 ${curPage === 5 ? 'active' : ''}`}>
-          {/* Page 5 content */}
           <div class="skw-page skw-page-5">
             <div class="skw-page__half skw-page__half--left">
               <div class="skw-page__skewed">
