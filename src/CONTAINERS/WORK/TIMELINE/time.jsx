@@ -22,7 +22,7 @@ const time = () => {
 			</div> 
 
 			<div class="cd-timeline-content">
-				<h2 style={{fontSize: 25}}>Software Developer</h2>
+				<h2 style={{fontSize: 25}}>Software Project Assistant</h2>
 				<h3>New York State  Division of Human Rights </h3>
                 <p>Direct the development and implementation of various lT systems ensuring compliance with security standards, methods and project schedules and other objectives and ensuring that appropriate resources are available to complete the project.
 					Oversee the maintenance of the agency Case Management System (CMS); identifying enhancement opportunities and overseeing programming staff development and implementation of same. Ensure compatibility with other programs and platforms consistent with software upgrade.

@@ -53,8 +53,18 @@ const Head = () => {
             <div class="skw-page__half skw-page__half--right">
               <div class="skw-page__skewed">
                 <div class="skw-page__content">
-                  <h2 class="skw-page__heading">Skewed One Page Scroll</h2>
-                  <p class="skw-page__description">Just scroll down</p>
+                  <h1 class="skw-page__heading">Jordan University of Science and Technology</h1>
+                  <h2>Major: Computer Enegineering</h2>
+                  <h2></h2>
+
+                  <div className='education_buttons'>
+                    <button className='button-download' style={{margin : 10}}>Diploma</button>
+                     <button className='button-download'>Evaluated transcript</button>
+                  </div>
+                
+                  <a href="https://www.just.edu.jo/Pages/Default.aspx"
+                   class="skw-page__description"
+                   style={{ color: "#3399CC", textDecoration: "underline" }}>More about University</a>
                 </div>
               </div>
             </div>
