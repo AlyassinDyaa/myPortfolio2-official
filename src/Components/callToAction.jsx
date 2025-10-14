@@ -1,11 +1,13 @@
 import React from 'react'
-import resume from '../Assets/dyaaResume.pdf'
+import { Link } from 'react-router-dom'
 
 const callToAction = () => {
+  const resume = require("../Assets/D'YaaAlyassinSoftwareRESUME.pdf");
+  
   return (
     <div className='cta'>
       <a href = {resume} download className='btn-head'> Download Resume. </a>
-      <a href="#contact" className='btn-head btn-primary'> Let's Talk. </a>
+      <Link to="/Contact" className='btn-head btn-primary'> Let's Talk. </Link>
     </div>
   )
 }

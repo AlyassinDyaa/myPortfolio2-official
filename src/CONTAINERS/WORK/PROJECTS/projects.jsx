@@ -14,9 +14,18 @@ import IMG7 from "../../../Assets/unovaFit.png";
 import IMG8 from "../../../Assets/portfolio3.png";
 import IMG9 from "../../../Assets/3dportfolio1.png";
 import IMG10 from "../../../Assets/yd.png"
+import IMG11 from "../../../Assets/nextus.png"
 
 
 const cardsData = [
+  {
+    title: "Nextus Customs",
+    imageSrc: IMG11,
+    links: {
+      demo: "https://nextuscustoms.com",
+      github: ""
+    }
+  },
   {
     title: "Portfolio 1",
     imageSrc: IMG1,
@@ -53,7 +62,7 @@ const cardsData = [
     title: "Your Design",
     imageSrc: IMG10,
     links: {
-      demo: "https://yourdesigns.netlify.app/",
+      demo: "https://yourdesign.vercel.app/",
       github: "https://github.com/AlyassinDyaa/yourDesign/tree/main/yd"
     }
   },
@@ -107,9 +116,15 @@ const cardsComingSoon = [
 
 function Card({ title, imageSrc, links }) {
   return (
-    <div className='card-container '>
+    <motion.div 
+      className='card-container'
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px" }}
+    >
 
-      <div className="flip-card ">
+      <div className="flip-card">
 
         <div className="flip-card-inner">
 
@@ -130,9 +145,14 @@ function Card({ title, imageSrc, links }) {
                   <h1>DEMO</h1>
                   <a href={links.demo} target="_blank" rel="noreferrer">
                     <motion.div
-                      whileInView={{ scale: [0, 1] }}
-                      whileHover={{ scale: [1, 0.9], color: "violet", transition: { duration: 0.25 } }}
-                      transition={{ duration: 0.25 }}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      whileHover={{ scale: 1.1, color: "violet" }}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: 260, 
+                        damping: 20 
+                      }}
                     >
                       <AiFillEye />
                     </motion.div>
@@ -143,9 +163,15 @@ function Card({ title, imageSrc, links }) {
                   <h1>GITHUB</h1>
                   <a href={links.github} target="_blank" rel="noreferrer">
                     <motion.div
-                      whileInView={{ scale: [0, 1] }}
-                      whileHover={{ scale: [1, 0.9], color: "violet", transition: { duration: 0.25 } }}
-                      transition={{ duration: 0.25 }}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      whileHover={{ scale: 1.1, color: "violet" }}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: 260, 
+                        damping: 20,
+                        delay: 0.1
+                      }}
                       
                     >
                       <AiFillGithub />
@@ -160,7 +186,7 @@ function Card({ title, imageSrc, links }) {
 
 
     
-    </div>
+    </motion.div>
   );
 }
 
@@ -170,14 +196,20 @@ function Work() {
   return (
     <div id='work' className='workClass'>
       
-      <div className='container__work' >
+      <motion.div 
+        className='container__work'
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <h1 className='container__work-title'> WEB Based PROJECTS </h1>
         <h2 className='container__work-sub'> See Demos belows</h2>
-      </div>
+      </motion.div>
 
 
         <div className="work">
-          {cardsData.map((card) => (
+          {cardsData.map((card, index) => (
             <Card
               key={card.title}
               title={card.title}
@@ -187,12 +219,18 @@ function Work() {
           ))}
         </div>
 
-        <div className='container__work' >
+        <motion.div 
+          className='container__work'
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
             <h1 className='container__work-title'> COMING SOON </h1>
             <h2 className='container__work-sub'> See Demos belows</h2>
-      </div>
+      </motion.div>
       <div className="work">
-          {cardsComingSoon.map((card) => (
+          {cardsComingSoon.map((card, index) => (
             <Card
               key={card.title}
               title={card.title}

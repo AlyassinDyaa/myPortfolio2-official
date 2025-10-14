@@ -1,0 +1,64 @@
+.education-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  background-image: url('../../Assets/Background/tex1.png'), 
+                    radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tablet and Mobile Devices */
+@media (max-width: 768px) {
+  .education-container {
+    background-attachment: scroll;
+    height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  .skw-page__heading {
+    font-size: 20px !important;
+  }
+
+  .skw-page__description {
+    font-size: 14px !important;
+    line-height: 1.6;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .education-container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 375px) {
+  .education-container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Touch Device Improvements */
+@media (hover: none) and (pointer: coarse) {
+  .btn-head {
+    min-height: 44px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page-indicator {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+

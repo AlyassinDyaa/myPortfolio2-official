@@ -1,0 +1,85 @@
+/* CV Download Button */
+.cv-download-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 20px 0;
+  margin-top: 20px;
+}
+
+.cv-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.9) 0%, rgba(75, 0, 130, 0.9) 100%);
+  border: 2px solid rgba(138, 43, 226, 0.8);
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+  cursor: pointer;
+}
+
+.cv-download-btn:hover {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 1) 0%, rgba(75, 0, 130, 1) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.6);
+  border-color: rgba(138, 43, 226, 1);
+}
+
+.cv-download-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+.cv-icon {
+  font-size: 22px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cv-download-container {
+    padding: 90px 0 15px 0;
+    margin-top: 15px;
+  }
+
+  .cv-download-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+
+  .cv-icon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-download-container {
+    padding: 80px 0 10px 0;
+    margin-top: 10px;
+  }
+
+  .cv-download-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .cv-icon {
+    font-size: 18px;
+  }
+}
+

@@ -65,7 +65,7 @@
       width: 100%;
       height: 100%;
       text-align: center;
-      transition: transform 0.8s;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       transform-style: preserve-3d;
     }
     
@@ -91,7 +91,7 @@
     .flip-card-front {
       background: linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);  color: 	#800080;
       color: white;  
-      
+      transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
   
@@ -176,7 +176,7 @@
          
         .flip-card-inner {
           perspective: 500px;
-          transition: transform 0.5s;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .img {

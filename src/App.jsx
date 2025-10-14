@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route , Navigate} from "react-router-d
 import NAVMENU from "./Components/NavMENU/Navbar"
 
 import MAIN from "./CONTAINERS/HOME/main"
-import WORK from "./CONTAINERS/WORK/work"
-import EDUCATION from "./CONTAINERS/EDUCATION/edu"
-import HOBBIES from "./CONTAINERS/HOBBIES/hobbies"
+import Work from "./CONTAINERS/WORK/work"
+import Education from "./CONTAINERS/EDUCATION/edu"
+import Hobbies from "./CONTAINERS/HOBBIES/hobbies"
 import TEST from "./CONTAINERS/TESTIMONIALS/testimonials"
 import CONTACT from "./CONTAINERS/CONTACT/contact"
 import FOOTER from "./CONTAINERS/FOOTER/footer"
@@ -18,13 +18,13 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<MAIN />} />
-        <Route path="/Work" element={<WORK />} />
-        <Route path="/Education" element={<EDUCATION/>} />
+        <Route path="/Work" element={<Work />} />
+        <Route path="/Education" element={<Education/>} />
         <Route path="/TEST" element={<TEST/>} />
-        <Route path="/Hobbies" element={<HOBBIES/>} />
+        <Route path="/Hobbies" element={<Hobbies/>} />
+        <Route path="/Contact" element={<CONTACT/>} />
       </Routes>
 
-      <CONTACT/>
       <FOOTER/>
   </Router>
   )

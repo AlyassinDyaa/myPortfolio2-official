@@ -21,19 +21,16 @@ const Navbar = () => {
           <Link to="/" onClick={() => {  scrollToTop();} }>Home</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/work" onClick={() => {  scrollToTop();} }>Work</Link>
+          <Link to="/Work" onClick={() => {  scrollToTop();} }>Work</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/education" onClick={() => {  scrollToTop();} }>Education</Link>
+          <Link to="/Education" onClick={() => {  scrollToTop();} }>Education</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/skills" onClick={() => {  scrollToTop();} }>Skills</Link>
+          <Link to="/Hobbies" onClick={() => {  scrollToTop();} }>Hobbies</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/TEST" onClick={() => {  scrollToTop();} }>Services</Link>
-        </li>
-        <li className="p__opensans">
-          <Link to="/hobbies" onClick={() => {  scrollToTop();} }>Hobbies</Link>
+          <Link to="/Contact" onClick={() => {  scrollToTop();} }>Contact</Link>
         </li>
       </ul>
 
@@ -57,28 +54,23 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/work" onClick={() => {setToggleMenu(false); scrollToTop()}}>
+                <Link to="/Work" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Work
                 </Link>
               </li>
               <li>
-                <Link to="/edu"onClick={() => {setToggleMenu(false); scrollToTop()}}>
+                <Link to="/Education" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Education
                 </Link>
               </li>
               <li>
-                <Link to="/skills" onClick={() => {setToggleMenu(false); scrollToTop()}}>
-                  Skills
-                </Link>
-              </li>
-              <li>
-                <Link to="/TEST" onClick={() => {setToggleMenu(false); scrollToTop()}}>
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/hobbies" onClick={() => {setToggleMenu(false); scrollToTop()}}>
+                <Link to="/Hobbies" onClick={() => {setToggleMenu(false); scrollToTop()}}>
                   Hobbies
+                </Link>
+              </li>
+              <li>
+                <Link to="/Contact" onClick={() => {setToggleMenu(false); scrollToTop()}}>
+                  Contact
                 </Link>
               </li>
             </ul>

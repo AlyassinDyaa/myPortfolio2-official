@@ -1,13 +1,13 @@
 import React from 'react'
 import "./edu.css"
-import HEAD from "./header/head"
+import Head from "./header/head"
 
-const edu = () => {
+const Education = () => {
   return (
-    <div id= "Education">
-        <HEAD/>
+    <div id="Education" className="education-container">
+        <Head/>
     </div>
   )
 }
 
-export default edu
+export default Education

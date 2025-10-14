@@ -10,20 +10,113 @@
   position: relative;
 }
 
-.container__education-header .btn-head {
+.navigation-buttons {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 10px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  z-index: 1000;
+}
+
+.btn-head {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.8) 0%, rgba(75, 0, 130, 0.8) 100%);
+  border: 2px solid rgba(138, 43, 226, 0.6);
+  border-radius: 50px;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.container__education-header .btn-head:nth-child(2) {
-  right: 10px; /* Adjust the value to position the "Previous" button */
+.btn-text {
+  display: inline;
 }
 
-.container__education-header .btn-head:nth-child(1) {
-  left: 10px; /* Adjust the value to position the "Next" button */
+.btn-icon {
+  display: none;
+  font-size: 24px;
+}
+
+.btn-head:hover {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 1) 0%, rgba(75, 0, 130, 1) 100%);
+  border-color: rgba(138, 43, 226, 1);
+}
+
+.btn-head:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, rgba(100, 100, 100, 0.5) 0%, rgba(60, 60, 60, 0.5) 100%);
+  border-color: rgba(100, 100, 100, 0.5);
+}
+
+.btn-head:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+.page-indicator {
+  padding: 10px 25px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(138, 43, 226, 0.6);
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.current-page {
+  color: #8A2BE2;
+  font-size: 24px;
+}
+
+.page-separator {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.total-pages {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.keyboard-hint {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 10px 25px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(138, 43, 226, 0.5);
+  border-radius: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+  }
 }
 
 .skw-pages {
@@ -191,8 +284,223 @@
   text-align: center;
 }
 
+/* New Skills Section Layout */
+.skills-content {
+  padding: 30px 20px !important;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.skills-main-heading {
+  font-size: 2rem !important;
+  margin-bottom: 25px !important;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Technical Skills - Tag Layout */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-category {
+  margin-bottom: 15px;
+}
+
+.skill-category-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8A2BE2;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(75, 0, 130, 0.3));
+  border: 1px solid rgba(138, 43, 226, 0.6);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.6), rgba(75, 0, 130, 0.6));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+}
+
+/* Soft Skills - Card Layout */
+.soft-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.soft-skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  transition: all 0.3s ease;
+}
+
+.soft-skill-item:hover {
+  background: rgba(138, 43, 226, 0.15);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateX(5px);
+}
+
+.soft-skill-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.soft-skill-text h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 5px 0;
+}
+
+.soft-skill-text p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.4;
+}
+
 .skw-page__link {
   color: #ffa0a0;
+}
+
+/* Projects Section Layout */
+.projects-content {
+  padding: 30px 20px !important;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.projects-main-heading {
+  font-size: 2rem !important;
+  margin-bottom: 25px !important;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.project-card {
+  display: flex;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px;
+  border-radius: 15px;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.project-card:hover::before {
+  left: 100%;
+}
+
+.project-card:hover {
+  background: rgba(138, 43, 226, 0.1);
+  border-color: rgba(138, 43, 226, 0.7);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+}
+
+.project-card.highlight {
+  border: 2px solid rgba(138, 43, 226, 0.6);
+  background: rgba(138, 43, 226, 0.08);
+}
+
+.project-card.highlight:hover {
+  border-color: rgba(138, 43, 226, 0.9);
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.5);
+}
+
+.project-icon {
+  font-size: 40px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-details {
+  flex: 1;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.project-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.4), rgba(75, 0, 130, 0.4));
+  border: 1px solid rgba(138, 43, 226, 0.6);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .skw-page-1 .skw-page__half--left .skw-page__content {
@@ -205,16 +513,24 @@
 }
 
 .skw-page-2 .skw-page__half--left .skw-page__content {
-  background-image: url("../../../Assets/Background/tex1.png"),
-    radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .skw-page-2 .skw-page__half--right .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg");
+  background-image: linear-gradient(rgba(75, 0, 130, 0.6), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .skw-page-3 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-2.jpg");
+  background-image: linear-gradient(rgba(138, 43, 226, 0.5), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .skw-page-3 .skw-page__half--right .skw-page__content {
@@ -222,56 +538,593 @@
     radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
-.skw-page-4 .skw-page__half--left .skw-page__content {
-  background-image: url("../../../Assets/Background/tex1.png"),
-    radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+/* Smooth transitions for page content */
+.skw-page__content h1,
+.skw-page__content h2,
+.skw-page__content p {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.skw-page-4 .skw-page__half--right .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg");
+.skw-page.active .skw-page__content h1,
+.skw-page.active .skw-page__content h2,
+.skw-page.active .skw-page__content p {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.skw-page-5 .skw-page__half--left .skw-page__content {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/img-test.jpg");
-}
-
-.skw-page-5 .skw-page__half--right .skw-page__content {
-  background-image: url("../../../Assets/Background/tex1.png"),
-    radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-}
-
-/* CSS code 
-
-
+/* Responsive Design */
 @media only screen and (max-width: 768px) {
-
-
-  .skw-page__half {
-  
+  .keyboard-hint {
+    top: 10px;
+    font-size: 11px;
+    padding: 6px 15px;
+    z-index: 1001;
   }
 
- 
+  .navigation-buttons {
+    position: fixed;
+    bottom: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    gap: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .btn-head {
+    padding: 0;
+    font-size: 0;
+    border-radius: 50%;
+    pointer-events: auto;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.95) 0%, rgba(75, 0, 130, 0.95) 100%);
+    box-shadow: 0 3px 12px rgba(138, 43, 226, 0.5);
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  .btn-icon {
+    display: block;
+    font-size: 26px;
+  }
+
+  .btn-previous {
+    order: 1;
+  }
+
+  .btn-next {
+    order: 3;
+  }
+
+  .page-indicator {
+    display: none;
+    order: 2;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 15px;
+    font-size: 14px;
+    pointer-events: auto;
+  }
+
+  .current-page {
+    font-size: 18px;
+  }
+
+  .skw-page__half {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+  }
+
+  .skw-page__half--left {
+    top: 0;
+    left: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .skw-page__half--right {
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  .skw-page.active .skw-page__half--left {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .skw-page.active .skw-page__half--right {
+    transform: translate3d(0, 0, 0);
+  }
 
   .skw-page__skewed {
-    transform: none;
-    background-color: #000;
+    transform: none !important;
+    width: 100%;
+    left: 0 !important;
+    right: 0 !important;
   }
 
   .skw-page__half--left .skw-page__skewed {
     left: 0;
-    width: 100%;
-   
   }
 
   .skw-page__half--right .skw-page__skewed {
     right: 0;
-    width: 100%;
   }
 
   .skw-page__content {
-    transform: none;
-    padding: 20px;
+    transform: none !important;
+    padding: 15px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skw-page__content h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 10px;
+  }
+
+  .skw-page__heading {
+    font-size: 20px !important;
+    margin-bottom: 10px;
+  }
+
+  /* Skills section mobile responsive */
+  .skills-content {
+    padding: 15px 10px !important;
+  }
+
+  .skills-main-heading {
+    font-size: 1.4rem !important;
+    margin-bottom: 15px !important;
+    margin-top: 20px !important;
+  }
+
+  .skill-category-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .skill-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .soft-skill-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .soft-skill-icon {
+    font-size: 24px;
+  }
+
+  .soft-skill-text h4 {
+    font-size: 14px;
+  }
+
+  .soft-skill-text p {
+    font-size: 12px;
+  }
+
+  /* Projects section mobile responsive */
+  .projects-content {
+    padding: 15px 10px !important;
+  }
+
+  .projects-main-heading {
+    font-size: 1.4rem !important;
+    margin-bottom: 15px !important;
+    margin-top: 20px !important;
+  }
+
+  .projects-list {
+    gap: 12px;
+  }
+
+  .project-card {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .project-icon {
+    font-size: 32px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+
+  .project-description {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .project-tag {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .skw-page__description {
+    font-size: 13px !important;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .education_buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 15px 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .button-download {
+    font-size: 12px;
+    padding: 0.6em 1.5em;
+    width: auto;
+    flex: 1;
+    min-width: 120px;
+    max-width: 180px;
+  }
+
+  /* Page 1 specific adjustments */
+  .skw-page-1 .skw-page__content h2 {
+    font-size: 16px !important;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .skw-page-1 .skw-page__content a {
+    order: 3;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .skw-page-1 .education_buttons {
+    order: 2;
+    margin: 12px 0;
   }
 }
-*/
+
+/* Extra small devices */
+@media only screen and (max-width: 480px) {
+  .keyboard-hint {
+    top: 8px;
+    font-size: 10px;
+    padding: 5px 12px;
+  }
+
+  .navigation-buttons {
+    padding: 0 5px;
+  }
+
+  .btn-head {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+  }
+
+  .btn-icon {
+    font-size: 24px;
+  }
+
+  .page-indicator {
+    display: none;
+  }
+
+  .skw-page__content h1 {
+    font-size: 1.3rem !important;
+  }
+
+  .skw-page__heading {
+    font-size: 18px !important;
+  }
+
+  /* Skills section extra small screens */
+  .skills-content {
+    padding: 12px 8px !important;
+  }
+
+  .skills-main-heading {
+    font-size: 1.2rem !important;
+    margin-bottom: 12px !important;
+    margin-top: 15px !important;
+  }
+
+  .skill-category {
+    margin-bottom: 10px;
+  }
+
+  .skill-category-title {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .skill-tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .soft-skills-list {
+    gap: 10px;
+  }
+
+  .soft-skill-item {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .soft-skill-icon {
+    font-size: 20px;
+  }
+
+  .soft-skill-text h4 {
+    font-size: 13px;
+  }
+
+  .soft-skill-text p {
+    font-size: 11px;
+  }
+
+  /* Projects section extra small screens */
+  .projects-content {
+    padding: 12px 8px !important;
+  }
+
+  .projects-main-heading {
+    font-size: 1.2rem !important;
+    margin-bottom: 12px !important;
+    margin-top: 15px !important;
+  }
+
+  .projects-list {
+    gap: 10px;
+  }
+
+  .project-card {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .project-icon {
+    font-size: 28px;
+  }
+
+  .project-title {
+    font-size: 15px;
+  }
+
+  .project-description {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .project-tags {
+    gap: 5px;
+  }
+
+  .project-tag {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .skw-page__description {
+    font-size: 12px !important;
+    padding: 0 5px;
+  }
+
+  .button-download {
+    font-size: 11px;
+    padding: 0.5em 1em;
+    min-width: 100px;
+    max-width: 150px;
+  }
+
+  /* Page 1 specific adjustments for small screens */
+  .skw-page-1 .skw-page__content h1 {
+    font-size: 1.2rem !important;
+  }
+
+  .skw-page-1 .skw-page__content h2 {
+    font-size: 14px !important;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  .skw-page-1 .skw-page__content a {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .skw-page-1 .education_buttons {
+    margin: 10px 0;
+    gap: 8px;
+  }
+}
+
+/* Landscape mode on mobile */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .keyboard-hint {
+    display: none;
+  }
+
+  .navigation-buttons {
+    padding: 0 5px;
+  }
+
+  .btn-head {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  .btn-icon {
+    font-size: 22px;
+  }
+
+  .page-indicator {
+    display: none;
+  }
+
+  .skw-page__half {
+    height: 50vh;
+  }
+
+  .skw-page__content h1 {
+    font-size: 1.2rem !important;
+    margin-bottom: 5px;
+  }
+
+  .skw-page__heading {
+    font-size: 16px !important;
+  }
+
+  /* Skills section landscape mode */
+  .skills-content {
+    padding: 10px 8px !important;
+  }
+
+  .skills-main-heading {
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+    margin-top: 12px !important;
+  }
+
+  .skills-grid {
+    gap: 10px;
+  }
+
+  .skill-category {
+    margin-bottom: 8px;
+  }
+
+  .skill-category-title {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .skill-tags {
+    gap: 5px;
+  }
+
+  .skill-tag {
+    font-size: 9px;
+    padding: 3px 7px;
+  }
+
+  .soft-skills-list {
+    gap: 8px;
+  }
+
+  .soft-skill-item {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .soft-skill-icon {
+    font-size: 18px;
+  }
+
+  .soft-skill-text h4 {
+    font-size: 12px;
+  }
+
+  .soft-skill-text p {
+    font-size: 10px;
+  }
+
+  /* Projects section landscape mode */
+  .projects-content {
+    padding: 10px 8px !important;
+  }
+
+  .projects-main-heading {
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+    margin-top: 12px !important;
+  }
+
+  .projects-list {
+    gap: 8px;
+  }
+
+  .project-card {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .project-icon {
+    font-size: 24px;
+  }
+
+  .project-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .project-description {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .project-tags {
+    gap: 4px;
+  }
+
+  .project-tag {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+
+  .skw-page__description {
+    font-size: 11px !important;
+    line-height: 1.4;
+  }
+
+  .education_buttons {
+    margin: 10px 0;
+    gap: 5px;
+  }
+
+  .button-download {
+    font-size: 10px;
+    padding: 0.4em 0.8em;
+    min-width: 90px;
+  }
+
+  /* Page 1 specific adjustments for landscape */
+  .skw-page-1 .skw-page__content h1 {
+    font-size: 1.1rem !important;
+  }
+
+  .skw-page-1 .skw-page__content h2 {
+    font-size: 13px !important;
+    margin: 4px 0;
+  }
+
+  .skw-page-1 .skw-page__content a {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  .skw-page-1 .education_buttons {
+    margin: 8px 0;
+    gap: 6px;
+  }
+}
