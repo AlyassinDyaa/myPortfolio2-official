@@ -32,7 +32,7 @@ const footer = () => {
       <h3>D'Yaa Alyassin Portfolio</h3>
     </p>
 
-    <p>Delicate Solutions &copy; 2023</p>
+    <p style={{color: "white"}}>D'Yaa Alyassin &copy; 2025</p>
   </div>
 
 </footer>

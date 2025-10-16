@@ -1,14 +1,11 @@
 .education-container {
   width: 100%;
   min-height: 100vh;
-  height: 100vh;
-  background-image: url('../../Assets/Background/tex1.png'), 
-                    radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  height: auto;
+  background: transparent;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Tablet and Mobile Devices */

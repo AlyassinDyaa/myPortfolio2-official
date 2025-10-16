@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route , Navigate} from "react-router-dom"
 
 import NAVMENU from "./Components/NavMENU/Navbar"
+import ScrollToTop from "./Components/ScrollToTop"
 
 import MAIN from "./CONTAINERS/HOME/main"
 import Work from "./CONTAINERS/WORK/work"
@@ -14,6 +15,7 @@ import FOOTER from "./CONTAINERS/FOOTER/footer"
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <NAVMENU/>
 
       <Routes>
