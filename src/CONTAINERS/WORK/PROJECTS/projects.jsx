@@ -3,6 +3,7 @@ import "./projects.css"
 
 import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+import { FaLock } from 'react-icons/fa';
 
 import IMG1 from "../../../Assets/portfolio1.png";
 import IMG2 from "../../../Assets/portfolio2.png";
@@ -15,7 +16,33 @@ import IMG8 from "../../../Assets/portfolio3.png";
 import IMG9 from "../../../Assets/3dportfolio1.png";
 import IMG10 from "../../../Assets/yd.png"
 import IMG11 from "../../../Assets/nextus.png"
+import TUBEGRAB from "../../../Assets/tubegrab.jpg"
+import DASHBOARD from "../../../Assets/idyaa-dashboard.jpg"
+import MEDIAPLAYER from "../../../Assets/mediaplayer.jpg"
 
+
+// Private projects: screenshots only, no public demo or source links
+const privateCards = [
+  {
+    title: "TubeGrab",
+    hidden: true,
+    imageSrc: TUBEGRAB,
+    description: "Windows desktop app for downloading YouTube videos and playlists, with parallel downloads, a live queue and per-playlist combining into one video with chapters.",
+    tech: ["Python", "CustomTkinter", "yt-dlp", "FFmpeg"],
+  },
+  {
+    title: "IDyaa Dashboard",
+    imageSrc: DASHBOARD,
+    description: "All-in-one personal dashboard: a writing studio for stories and graphic novels plus tasks, finance, fitness and habits, with Claude AI built in. Installable as a PWA.",
+    tech: ["React", "TypeScript", "Vite", "Node.js"],
+  },
+  {
+    title: "Home Media Player",
+    imageSrc: MEDIAPLAYER,
+    description: "Netflix-style media player that turns messy movie and TV folders into a browsable library with artwork, and plays almost any format through mpv.",
+    tech: ["Electron", "React", "Node.js", "SQLite"],
+  },
+];
 
 const cardsData = [
   {
@@ -192,6 +219,38 @@ function Card({ title, imageSrc, links }) {
 
 
 
+function PrivateCard({ title, imageSrc, description, tech }) {
+  return (
+    <motion.div
+      className='card-container'
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px" }}
+    >
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <span className="private-badge"><FaLock /> PRIVATE</span>
+            <img src={imageSrc} alt={`${title} screenshot`} className="img" />
+            <p className="title">{title}</p>
+          </div>
+
+          <div className="flip-card-back private-back">
+            <span className="private-badge private-badge--inline"><FaLock /> Private project</span>
+            <p className="private-title">{title}</p>
+            <p className="private-desc">{description}</p>
+            <div className="private-tech">
+              {tech.map((t) => <span key={t}>{t}</span>)}
+            </div>
+            <p className="private-note">Source and demo not public</p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 function Work() {
   return (
     <div id='work' className='workClass'>
@@ -203,12 +262,15 @@ function Work() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h1 className='container__work-title'> WEB Based PROJECTS </h1>
-        <h2 className='container__work-sub'> See Demos belows</h2>
+        <h1 className='container__work-title'> PROJECTS </h1>
+        <h2 className='container__work-sub'> Hover or tap a card for details and live demos</h2>
       </motion.div>
 
 
         <div className="work">
+          {privateCards.filter((card) => !card.hidden).map((card) => (
+            <PrivateCard key={card.title} {...card} />
+          ))}
           {cardsData.map((card, index) => (
             <Card
               key={card.title}
@@ -227,7 +289,7 @@ function Work() {
           viewport={{ once: true }}
         >
             <h1 className='container__work-title'> COMING SOON </h1>
-            <h2 className='container__work-sub'> See Demos belows</h2>
+            <h2 className='container__work-sub'> Currently in progress</h2>
       </motion.div>
       <div className="work">
           {cardsComingSoon.map((card, index) => (

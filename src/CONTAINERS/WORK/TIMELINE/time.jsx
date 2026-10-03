@@ -1,113 +1,110 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "./time.css"
 import { motion } from "framer-motion";
+import { FaLaptopCode, FaCode } from "react-icons/fa";
 
-const scrollToTop = () => window.scrollTo(0, 0);
+const jobs = [
+  {
+    title: "Software Developer",
+    company: "New York State",
+    date: "06/2023 - Present",
+    link: "https://dhr.ny.gov/",
+    Icon: FaLaptopCode,
+    points: [
+      "Build and maintain ASP.NET / C# applications that follow program specifications and coding standards",
+      "Write design specifications for new systems, integrations and enhancements",
+      "Troubleshoot and update application components backed by SQL Server and Oracle databases",
+      "Turn business requirements into automated applications that match agency priorities",
+      "Represent the Development/QA team in weekly meetings and explain technical issues to functional and technical staff",
+    ],
+    tech: ["ASP.NET", "C#", "SQL Server", "Oracle", "HTML"],
+  },
+  {
+    title: "Front-End Developer Intern",
+    company: "Stack Technologies",
+    date: "08/2020",
+    link: "https://www.facebook.com/StackTechnology.jo",
+    Icon: FaCode,
+    points: [
+      "Built reusable components with React, Angular and Vue.js",
+      "Developed interactive HTML/CSS/JavaScript components, improving page speed by 50%",
+      "Improved navigation and visual design across several pages, raising customer engagement by 20%",
+      "Kept stylesheets maintainable and scalable with SASS and LESS",
+      "Worked with the team in agile sprints",
+    ],
+    tech: ["React", "Angular", "Vue.js", "JavaScript", "SASS"],
+  },
+];
 
 const Time = () => {
-  useEffect(() => {
-    const timelineBlocks = document.querySelectorAll('.cd-timeline-block');
-    const offset = 0.8;
-
-    function hideBlocks(blocks) {
-      blocks.forEach(block => {
-        block.querySelector('.cd-timeline-img').classList.add('is-hidden');
-        block.querySelector('.cd-timeline-content').classList.add('is-hidden');
-      });
-    }
-
-    function showBlocks(blocks) {
-      blocks.forEach(block => {
-        if (block.getBoundingClientRect().top <= window.innerHeight * offset && 
-            block.querySelector('.cd-timeline-img').classList.contains('is-hidden')) {
-          block.querySelector('.cd-timeline-img').classList.remove('is-hidden');
-          block.querySelector('.cd-timeline-img').classList.add('bounce-in');
-          block.querySelector('.cd-timeline-content').classList.remove('is-hidden');
-          block.querySelector('.cd-timeline-content').classList.add('bounce-in');
-        }
-      });
-    }
-
-    hideBlocks(timelineBlocks);
-    showBlocks(timelineBlocks);
-
-    window.addEventListener('scroll', () => {
-      showBlocks(timelineBlocks);
-    });
-
-    return () => {
-      window.removeEventListener('scroll', () => {
-        showBlocks(timelineBlocks);
-      });
-    };
-  }, []);
-
   return (
     <div className='container__timeline'>
-		
       <header className='headONE'>
-	  <motion.h1 
-        className='header_head'
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        EXPERIENCE
-      </motion.h1>
-		</header>
-		
+        <motion.h1
+          className='header_head'
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          EXPERIENCE
+        </motion.h1>
+      </header>
 
-		
+      <section className="timeline">
+        <motion.div
+          className="timeline__line"
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          viewport={{ once: true }}
+        />
 
-	<section id="cd-timeline" class="cd-container cssanimations">
+        {jobs.map(({ title, company, date, link, Icon, points, tech }, i) => {
+          const fromLeft = i % 2 === 0;
+          // The row watches the viewport; icon and card animate through variants
+          // (an icon starting at scale 0 has no size, so it can't be observed itself)
+          return (
+            <motion.div
+              key={title}
+              className={`timeline__item ${fromLeft ? "is-left" : "is-right"}`}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+            >
+              <motion.div
+                className="timeline__icon"
+                variants={{
+                  hidden: { scale: 0, rotate: -90 },
+                  show: { scale: 1, rotate: 0, transition: { type: "spring", stiffness: 220, damping: 16, delay: 0.1 } },
+                }}
+              >
+                <Icon />
+              </motion.div>
 
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-picture">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture"/>
-		</div> 
+              <motion.div
+                className="timeline__card"
+                variants={{
+                  hidden: { opacity: 0, x: fromLeft ? -60 : 60 },
+                  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut", delay: 0.2 } },
+                }}
+              >
+                <span className="timeline__date">{date}</span>
+                <h2>{title}</h2>
+                <a className="timeline__company" href={link} target="_blank" rel="noreferrer">{company}</a>
 
-		<div class="cd-timeline-content">
-			<h2 style={{fontSize: 25}}>Software Developer</h2>
-			<h3>New York State</h3>
-                <p>
-				• Code, test and maintain ASP.Net/C# applications that are in compliance with program specifications and coding standards<br/>
-				• Utilize the following technologies in order to perform assigned duties: ASP.NET, C#, HTML, SQL Server, Oracle<br/>
-				• Create detailed program design specifications for system implementations, Integrations, and enhancements<br/>
-				• Utilize relevant programming languages, queries, utilities, maintenance tools, and relational databases (e.g. SQL Server, Oracle) to troubleshoot, update, and modify the various components<br/>
-				• Communicate technical issues and information effectively, both verbally and in writing, with functional and technical staff<br/>
-				• Identify business requirements to develop automated applications which meet business priorities<br/>
-				• Participate in weekly meetings on behalf of the Development/QA team
-				</p>
-			<a href="https://dhr.ny.gov/" class="btn-head">MORE</a>
-			<span class="cd-date">06/2023 - Present</span>
-		</div> 
-	</div>
+                <ul className="timeline__points">
+                  {points.map((p) => <li key={p}>{p}</li>)}
+                </ul>
 
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-movie">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture"/>
-		</div>
-
-		<div class="cd-timeline-content">
-			<h2 style={{fontSize: 25}}>Front-End Developer Intern</h2>
-                <h3>Stack Technologies</h3>
-			<p>
-			• Utilized JavaScript libraries and frameworks such as React, Angular, and Vue.js to build efficient and reusable components<br/>
-			• Developed interactive components using HTML/CSS/JavaScript and increased page speed performance by 50% on all sites<br/>
-			• Optimized user experience for several web pages with intuitive navigation & visual design enhancements, improving customer engagement by 20%<br/>
-			• Utilized CSS preprocessors such as SASS and LESS to improve the maintainability and scalability of code<br/>
-			• Collaborates with other team members in agile processes
-			</p>
-			<a href="https://www.facebook.com/StackTechnology.jo" class="btn-head">MORE</a>
-			<span class="cd-date">08/2020</span>
-		</div> 
-	</div>
-		
-	
-
-	
-	</section> 
+                <div className="timeline__tech">
+                  {tech.map((t) => <span key={t}>{t}</span>)}
+                </div>
+              </motion.div>
+            </motion.div>
+          );
+        })}
+      </section>
     </div>
   )
 }

@@ -21,17 +21,20 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 1rem;
-    padding-top: 1rem; /* decrease the padding-top value */
+    padding: 1rem 16px; /* decrease the padding-top value */
+    text-align: center;
     color: white;
   }
   
   
   .work {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);   
-     justify-content: center;
+    /* as many columns as fit, so cards never run off the screen */
+    grid-template-columns: repeat(auto-fill, minmax(min(440px, 100%), 1fr));
+    justify-content: center;
     align-items: center;
-    height: 100hv;
+    max-width: 1800px;
+    margin: 0 auto;
   }
   
   .card-container {
@@ -162,6 +165,73 @@
     
   
    
+    /* Private projects */
+    .private-badge {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.7rem;
+      border-radius: 50px;
+      color: white;
+      background: rgba(138, 43, 226, 0.85);
+      border: 1px solid violet;
+      box-shadow: 0 0 12px rgba(238, 130, 238, 0.5);
+      z-index: 1;
+    }
+
+    .private-badge--inline {
+      position: static;
+      align-self: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .private-back {
+      align-items: center;
+      padding: 1rem 1.2rem;
+      box-sizing: border-box;
+    }
+
+    .private-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+
+    .private-desc {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      margin: 0 0 0.7rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .private-tech {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .private-tech span {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .private-note {
+      margin: 0.7rem 0 0;
+      font-size: 0.7rem;
+      font-style: italic;
+      opacity: 0.65;
+    }
+
     @media (max-width: 599px) {
 
         .flip-card {
