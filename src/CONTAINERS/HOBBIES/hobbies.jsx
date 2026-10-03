@@ -5,7 +5,6 @@ import "./hobbies.css"
 import { FaSwimmer, FaRunning, FaBook, FaGamepad, FaFutbol } from 'react-icons/fa'
 import { GiKimono } from 'react-icons/gi'
 
-import image1 from "../../Assets/hobbiesList/highRes/swimming.jpg"
 import image2 from "../../Assets/hobbiesList/highRes/tkd.jpg"
 import image3 from "../../Assets/hobbiesList/highRes/running.jpg"
 import image4 from "../../Assets/hobbiesList/highRes/dcomics.jpg"

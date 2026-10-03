@@ -3,7 +3,6 @@ import "./footer.css"
 import {BsFacebook} from "react-icons/bs" 
 import {AiFillInstagram} from "react-icons/ai"
 import {GiOverInfinity} from "react-icons/gi"
-import {SiFreelancer} from "react-icons/si"
 import {BsLinkedin} from "react-icons/bs"
 import {BsGithub} from "react-icons/bs"
 
@@ -20,7 +19,6 @@ const footer = () => {
     <a href="https://www.facebook.com/dyaa.alyassin/"><BsFacebook/></a>
     <a href="https://www.instagram.com/dyaa_alyassin/"><AiFillInstagram/></a>
     <a href="https://www.instagram.com/infinity_comicss/"><GiOverInfinity/></a>
-    <a href="#"><SiFreelancer/></a>
     <a href="https://www.linkedin.com/in/d-yaa-a-1b56b9144/"><BsLinkedin/></a>
     <a href="https://github.com/AlyassinDyaa"><BsGithub/></a>
 

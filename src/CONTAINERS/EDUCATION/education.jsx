@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './education.css';
-import JUST_IMG from '../../Assets/just.jpg';
 import DIPLOMA from '../../Assets/edu/diploma.pdf';
 import TRANSCRIPT from '../../Assets/edu/transcriptEval.pdf';
 

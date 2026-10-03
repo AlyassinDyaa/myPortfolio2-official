@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BiInfinite } from 'react-icons/bi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import './Navbar.css';
 
 
