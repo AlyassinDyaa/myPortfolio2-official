@@ -20,7 +20,7 @@ const jobs = [
     ],
     projects: [
       { name: "Online Complaint Web App", text: "optimized performance and delivered end-to-end localization across 13 languages" },
-      { name: "Content Management System", text: "building a new enterprise CMS to modernize how DHR creates and maintains web content (in development)" },
+      { name: "Case Management System", text: "building a new enterprise case management system for DHR (in development)" },
     ],
     tech: ["C#", "ASP.NET Core", "Entity Framework", "SQL Server", "REST APIs", "JavaScript"],
   },
