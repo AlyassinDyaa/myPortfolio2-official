@@ -1,48 +1,12 @@
 .education-container {
   width: 100%;
   min-height: 100vh;
-  height: auto;
   background: transparent;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: clip;
 }
 
-/* Tablet and Mobile Devices */
-@media (max-width: 768px) {
-  .education-container {
-    background-attachment: scroll;
-    height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-
-  .skw-page__heading {
-    font-size: 20px !important;
-  }
-
-  .skw-page__description {
-    font-size: 14px !important;
-    line-height: 1.6;
-  }
-}
-
-/* Small Mobile Devices */
-@media (max-width: 480px) {
-  .education-container {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-}
-
-/* Extra Small Devices */
-@media (max-width: 375px) {
-  .education-container {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-}
-
-/* Touch Device Improvements */
+/* Touch devices: comfortable tap targets */
 @media (hover: none) and (pointer: coarse) {
   .btn-head {
     min-height: 44px;
@@ -51,11 +15,4 @@
     align-items: center;
     justify-content: center;
   }
-
-  .page-indicator {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-  }
 }
-

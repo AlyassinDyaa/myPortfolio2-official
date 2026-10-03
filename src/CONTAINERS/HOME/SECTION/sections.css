@@ -19,6 +19,8 @@
   margin-bottom: 4rem;
   font-size: 4rem;
   color: white;
+  text-shadow: var(--heading-shadow);
+  text-align: center;
 }
 
 .page-content {

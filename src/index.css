@@ -13,6 +13,19 @@
   --color-white: #FFFFFF;
   --color-golden: #DCCA87;
   --color-mainBlack: #252525;
+
+  /* Site theme: shared by every page so cards, headings and accents match */
+  --accent: #8a2be2;
+  --accent-light: #c9a7ff;
+  --accent-glow: rgba(238, 130, 238, 0.45);
+  --card-bg: linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);
+  --card-border: rgba(255, 255, 255, 0.18);
+  --card-border-hover: violet;
+  --card-radius: 14px;
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.82);
+  --heading-shadow: 0 -2px 0 purple, 0 0 24px rgba(138, 43, 226, 0.45);
+  --btn-bg: linear-gradient(135deg, rgba(138, 43, 226, 0.9) 0%, rgba(75, 0, 130, 0.9) 100%);
 }
 
 * {

@@ -13,8 +13,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100rem;
-   height: 50rem;
+    width: min(100rem, calc(100vw - 32px));
+    min-height: 50rem;
     padding: 40px;
     border-radius: 20px;
     background-color: #ffffff10;
@@ -23,7 +23,7 @@
     
     .glass-box h1 {
     margin: 0;
-    font-size: 200px;
+    font-size: clamp(64px, 12vw, 200px);
     font-weight: bold;
     text-align: center;
     color: white;

@@ -50,7 +50,7 @@
   font-weight: 700;
   color: #fff;
   margin-bottom: 30px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: var(--heading-shadow);
 }
 
 .hobbies-hero-quote {
@@ -86,19 +86,19 @@
 
 .hobby-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: var(--card-radius);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--card-border);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .hobby-card:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--card-border-hover);
+  box-shadow: 0 0 30px var(--accent-glow);
   transform: translateY(-5px);
 }
 
@@ -135,7 +135,7 @@
   margin-bottom: 15px;
   display: inline-block;
   transition: transform 0.3s ease;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--accent-light) !important;
 }
 
 .hobby-card:hover .hobby-icon {
@@ -152,7 +152,7 @@
 
 .hobby-card p {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -315,7 +315,7 @@
   color: #fff;
   margin-bottom: 60px;
   font-weight: 700;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: var(--heading-shadow);
 }
 
 .philosophy-grid {
@@ -328,19 +328,19 @@
 
 .philosophy-card {
   padding: 50px 30px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--card-border);
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .philosophy-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  background: var(--card-bg);
+  border-color: var(--card-border-hover);
+  box-shadow: 0 0 30px var(--accent-glow);
   transform: translateY(-5px);
 }
 
@@ -353,7 +353,7 @@
 
 .philosophy-card p {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   line-height: 1.6;
 }
 

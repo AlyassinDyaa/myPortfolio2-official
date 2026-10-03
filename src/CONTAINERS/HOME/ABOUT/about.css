@@ -94,3 +94,10 @@
       letter-spacing: 0.3px;
     }
   }
+.content-container .title {
+  text-shadow: var(--heading-shadow);
+}
+
+.content-container .subtitle {
+  color: var(--accent-light);
+}
