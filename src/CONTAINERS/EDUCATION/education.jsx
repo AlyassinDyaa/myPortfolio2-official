@@ -36,7 +36,8 @@ const Education = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <h2 className="university-name">Jordan University of Science and Technology</h2>
-            <p className="major-name">Bachelor of Computer Engineering</p>
+            <p className="major-name">Bachelor of Science in Computer Engineering</p>
+            <p className="major-dates">Sep 2017 - Jun 2022</p>
             
             <div className="education-buttons">
               <motion.a 
@@ -88,10 +89,11 @@ const Education = () => {
           <div className="skills-column">
             <h3 className="column-title">💻 Technical Skills</h3>
             {[
-              { title: 'Programming', skills: ['JavaScript', 'C#', 'Python', 'Java', 'C++'] },
-              { title: 'Frameworks', skills: ['React', '.NET', 'Node.js', 'Express'] },
-              { title: 'Database', skills: ['SQL', 'MongoDB', 'MySQL'] },
-              { title: 'Front-End', skills: ['HTML5', 'CSS3', 'Responsive Design'] }
+              { title: 'Languages', skills: ['C#', 'JavaScript', 'SQL', 'Java', 'C++', 'Python'] },
+              { title: 'Frameworks', skills: ['ASP.NET Core', 'Entity Framework', 'React.js', 'Angular', 'Vue.js', 'jQuery'] },
+              { title: 'Databases', skills: ['SQL Server', 'Oracle', 'Relational Design', 'Query Optimization'] },
+              { title: 'Development', skills: ['REST APIs', 'Git', 'Agile/Scrum', 'SDLC', 'Unit Testing', 'UAT'] },
+              { title: 'Engineering', skills: ['App Integration', 'Production Support', 'Root-Cause Analysis', 'Code Review', 'Documentation'] }
             ].map((category, idx) => (
               <motion.div 
                 className="skill-group" 

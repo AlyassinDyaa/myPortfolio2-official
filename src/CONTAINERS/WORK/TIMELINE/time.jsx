@@ -5,34 +5,37 @@ import { FaLaptopCode, FaCode } from "react-icons/fa";
 
 const jobs = [
   {
-    title: "Software Developer",
-    company: "New York State",
-    date: "06/2023 - Present",
+    title: "Software Engineer / IT Specialist 2",
+    company: "New York State - Department of Human Rights",
+    location: "Albany, NY",
+    date: "Jun 2023 - Present",
     link: "https://dhr.ny.gov/",
     Icon: FaLaptopCode,
     points: [
-      "Build and maintain ASP.NET / C# applications that follow program specifications and coding standards",
-      "Write design specifications for new systems, integrations and enhancements",
-      "Troubleshoot and update application components backed by SQL Server and Oracle databases",
-      "Turn business requirements into automated applications that match agency priorities",
-      "Represent the Development/QA team in weekly meetings and explain technical issues to functional and technical staff",
+      "Build and support enterprise web applications with C#, ASP.NET Core, Entity Framework, SQL Server, JavaScript and REST APIs, owning features end to end from requirements to production",
+      "Deliver components across all six SDLC stages, partnering with business analysts and stakeholders to turn complex requirements into production-ready software",
+      "Build REST APIs, integrations and database components that streamline workflows and reduce manual processing",
+      "Provide production support and performance tuning, using root-cause analysis and SQL/data-access optimization to keep high-use workflows fast and reliable",
+      "Contribute to architecture decisions, peer code reviews, implementation planning and technical documentation",
     ],
-    tech: ["ASP.NET", "C#", "SQL Server", "Oracle", "HTML"],
+    projects: [
+      { name: "Online Complaint Web App", text: "optimized performance and delivered end-to-end localization across 13 languages" },
+      { name: "Content Management System", text: "building a new enterprise CMS to modernize how DHR creates and maintains web content (in development)" },
+    ],
+    tech: ["C#", "ASP.NET Core", "Entity Framework", "SQL Server", "REST APIs", "JavaScript"],
   },
   {
-    title: "Front-End Developer Intern",
+    title: "Front-End Lead Developer",
     company: "Stack Technologies",
-    date: "08/2020",
+    date: "Aug 2020 - Jun 2022",
     link: "https://www.facebook.com/StackTechnology.jo",
     Icon: FaCode,
     points: [
-      "Built reusable components with React, Angular and Vue.js",
-      "Developed interactive HTML/CSS/JavaScript components, improving page speed by 50%",
-      "Improved navigation and visual design across several pages, raising customer engagement by 20%",
-      "Kept stylesheets maintainable and scalable with SASS and LESS",
-      "Worked with the team in agile sprints",
+      "Led front-end engineering across React.js, Angular and Vue.js to deliver scalable, responsive web applications",
+      "Created reusable UI components and shared architecture patterns that cut duplicate work and sped up feature delivery",
+      "Established front-end coding standards, led troubleshooting of complex issues, and mentored developers on debugging and component design",
     ],
-    tech: ["React", "Angular", "Vue.js", "JavaScript", "SASS"],
+    tech: ["React.js", "Angular", "Vue.js", "JavaScript"],
   },
 ];
 
@@ -60,7 +63,7 @@ const Time = () => {
           viewport={{ once: true }}
         />
 
-        {jobs.map(({ title, company, date, link, Icon, points, tech }, i) => {
+        {jobs.map(({ title, company, location, date, link, Icon, points, projects, tech }, i) => {
           const fromLeft = i % 2 === 0;
           // The row watches the viewport; icon and card animate through variants
           // (an icon starting at scale 0 has no size, so it can't be observed itself)
@@ -92,10 +95,20 @@ const Time = () => {
                 <span className="timeline__date">{date}</span>
                 <h2>{title}</h2>
                 <a className="timeline__company" href={link} target="_blank" rel="noreferrer">{company}</a>
+                {location && <span className="timeline__location">{location}</span>}
 
                 <ul className="timeline__points">
                   {points.map((p) => <li key={p}>{p}</li>)}
                 </ul>
+
+                {projects && (
+                  <div className="timeline__projects">
+                    <h4>Key projects</h4>
+                    {projects.map(({ name, text }) => (
+                      <p key={name}><strong>{name}</strong> - {text}</p>
+                    ))}
+                  </div>
+                )}
 
                 <div className="timeline__tech">
                   {tech.map((t) => <span key={t}>{t}</span>)}

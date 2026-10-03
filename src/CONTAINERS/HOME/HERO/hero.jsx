@@ -15,7 +15,8 @@ const hero = () => {
           animate={{ x: 0 }}
           transition={{ duration: 1 }}>
             <h1>D'Yaa Alyassin</h1>
-            <h2>  Welcome to my Portfolio</h2>
+            <h2>Software Engineer <span className='hero-sep'>|</span> Full-Stack .NET Developer</h2>
+            <p className='hero-tagline'>5+ years building enterprise web apps with C#, ASP.NET Core, SQL Server and React</p>
             <CTA/>
           
         </motion.div>

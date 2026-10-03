@@ -6,7 +6,7 @@ const callToAction = () => {
   
   return (
     <div className='cta'>
-      <a href = {resume} download className='btn-head'> Download Resume. </a>
+      <a href={resume} download="Dyaa_Alyassin_Software_Engineer_Resume.pdf" className='btn-head'> Download Resume. </a>
       <Link to="/Contact" className='btn-head btn-primary'> Let's Talk. </Link>
     </div>
   )

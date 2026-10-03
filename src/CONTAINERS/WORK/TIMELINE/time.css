@@ -134,6 +134,40 @@ body {
   text-decoration: underline;
 }
 
+.timeline__location {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2em;
+}
+
+.timeline__projects {
+  margin: 0 0 1em;
+  padding: 0.8em 1em;
+  border-radius: 10px;
+  background: rgba(138, 43, 226, 0.15);
+  border-left: 3px solid violet;
+}
+
+.timeline__projects h4 {
+  margin: 0 0 0.4em;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+.timeline__projects p {
+  margin: 0.3em 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.timeline__projects strong {
+  color: white;
+}
+
 .timeline__points {
   margin: 1em 0;
   padding-left: 1.2em;

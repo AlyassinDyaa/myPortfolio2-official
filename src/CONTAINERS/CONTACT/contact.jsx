@@ -136,7 +136,7 @@ const Contact = () => {
                 </div>
                 <div className="info-text">
                   <h3>Location</h3>
-                  <p>Niskayuna, NY 12309</p>
+                  <p>Albany, NY</p>
                 </div>
               </div>
             </div>

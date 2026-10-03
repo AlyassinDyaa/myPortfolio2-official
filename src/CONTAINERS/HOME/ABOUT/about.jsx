@@ -65,10 +65,12 @@ const About = () => {
         </h1>
         <h2 className="subtitle">Motivation</h2>
         <p className="description">
-          " Dynamic and motivated individual that builds and manages projects
-          from concept to designing all the way to completion. I utilize my
-          experience to always increase my knowledge whilst offering value. I am
-          seeking a role of a software developer. "
+          I'm a Software Engineer with 5+ years of experience building enterprise
+          web applications in C#, ASP.NET Core, SQL Server and JavaScript. I own
+          features from requirements to production, build REST APIs and
+          integrations that remove manual work, and keep high-use systems fast
+          and reliable. I love turning complex requirements into clean,
+          maintainable software.
         </p>
       </motion.div>
     </div>

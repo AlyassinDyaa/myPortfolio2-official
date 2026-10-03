@@ -111,8 +111,15 @@
 .major-name {
   font-size: 1.5rem;
   color: rgba(0, 255, 251, 0.9);
-  margin: 0 0 2rem 0;
+  margin: 0 0 0.4rem 0;
   font-weight: 500;
+}
+
+.major-dates {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .education-buttons {

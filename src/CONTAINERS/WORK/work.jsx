@@ -18,7 +18,7 @@ const Work = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <a href={CV} download="Dyaa_Alyassin_Software_Resume.pdf" className="cv-download-btn">
+          <a href={CV} download="Dyaa_Alyassin_Software_Engineer_Resume.pdf" className="cv-download-btn">
             <HiDownload className="cv-icon" />
             <span>Download CV</span>
           </a>

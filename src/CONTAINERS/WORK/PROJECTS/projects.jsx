@@ -33,13 +33,13 @@ const privateCards = [
   {
     title: "IDyaa Dashboard",
     imageSrc: DASHBOARD,
-    description: "All-in-one personal dashboard: a writing studio for stories and graphic novels plus tasks, finance, fitness and habits, with Claude AI built in. Installable as a PWA.",
+    description: "Personal productivity workspace with a Word-style document editor, financial tracker, tasks, fitness and habits, plus Claude AI built in. Installable as a PWA.",
     tech: ["React", "TypeScript", "Vite", "Node.js"],
   },
   {
     title: "Home Media Player",
     imageSrc: MEDIAPLAYER,
-    description: "Netflix-style media player that turns messy movie and TV folders into a browsable library with artwork, and plays almost any format through mpv.",
+    description: "Streaming platform with account login that turns messy movie and TV folders into a Netflix-style library with artwork, and plays almost any format.",
     tech: ["Electron", "React", "Node.js", "SQLite"],
   },
 ];
@@ -106,7 +106,7 @@ const cardsData = [
     imageSrc: IMG7,
     links: {
       demo: "https://play.google.com/store/apps/details?id=com.unova_fit",
-      github: "https://play.google.com/store/apps/details?id=com.unova_fit"
+      github: ""
     }
   },
 
@@ -167,7 +167,9 @@ function Card({ title, imageSrc, links }) {
             
             
             <div className="comp">
+              {!links.demo && !links.github && <p className="private-note">Coming soon</p>}
               <div className="container__links">
+                {links.demo && (
                 <div className="container__eye">
                   <h1>DEMO</h1>
                   <a href={links.demo} target="_blank" rel="noreferrer">
@@ -185,7 +187,9 @@ function Card({ title, imageSrc, links }) {
                     </motion.div>
                   </a>
                 </div>
+                )}
 
+                {links.github && (
                 <div className="container__git">
                   <h1>GITHUB</h1>
                   <a href={links.github} target="_blank" rel="noreferrer">
@@ -205,6 +209,7 @@ function Card({ title, imageSrc, links }) {
                     </motion.div>
                   </a>
                 </div>
+                )}
               </div>
             </div>
           </div>
