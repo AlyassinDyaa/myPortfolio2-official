@@ -19,6 +19,10 @@ import IMG11 from "../../../Assets/nextus.png"
 import TUBEGRAB from "../../../Assets/tubegrab.jpg"
 import DASHBOARD from "../../../Assets/idyaa-dashboard.jpg"
 import MEDIAPLAYER from "../../../Assets/mediaplayer.jpg"
+import IMAGINACTION from "../../../Assets/imaginaction.jpg"
+
+// TODO: replace with the live ImaginAction Comics URL once it's deployed
+const IMAGINACTION_URL = "#";
 
 
 // Private projects: screenshots only, no public demo or source links
@@ -45,6 +49,14 @@ const privateCards = [
 ];
 
 const cardsData = [
+  {
+    title: "ImaginAction Comics",
+    imageSrc: IMAGINACTION,
+    links: {
+      demo: IMAGINACTION_URL,
+      github: ""
+    }
+  },
   {
     title: "Nextus Customs",
     imageSrc: IMG11,
