@@ -6,7 +6,7 @@ import { FaLaptopCode, FaCode } from "react-icons/fa";
 const jobs = [
   {
     title: "Software Engineer / IT Specialist 2",
-    company: "New York State - Department of Human Rights",
+    company: "New York State - Division of Human Rights",
     location: "Albany, NY",
     date: "Jun 2023 - Present",
     link: "https://dhr.ny.gov/",
