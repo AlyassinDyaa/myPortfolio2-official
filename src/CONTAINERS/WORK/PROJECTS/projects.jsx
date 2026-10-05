@@ -22,10 +22,8 @@ import MEDIAPLAYER from "../../../Assets/mediaplayer.jpg"
 import IMAGINACTION from "../../../Assets/imaginaction.jpg"
 import DARKBEATS from "../../../Assets/darkbeats.jpg"
 
-// TODO: replace with the live ImaginAction Comics URL once it's deployed
-const IMAGINACTION_URL = "#";
-// TODO: replace with the live DarkBeats URL once it's deployed
-const DARKBEATS_URL = "#";
+const IMAGINACTION_URL = "https://imaginaction-comics.vercel.app/";
+const DARKBEATS_URL = "https://darkbeatss.vercel.app/";
 
 
 // Private projects: screenshots only, no public demo or source links
