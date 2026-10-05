@@ -57,7 +57,7 @@ const cardsData = [
     imageSrc: DARKBEATS,
     links: {
       demo: DARKBEATS_URL,
-      github: "https://github.com/AlyassinDyaa/DarkBeatsSite"
+      github: ""
     }
   },
   {
