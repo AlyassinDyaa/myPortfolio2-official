@@ -21,6 +21,7 @@ import DASHBOARD from "../../../Assets/idyaa-dashboard.jpg"
 import MEDIAPLAYER from "../../../Assets/mediaplayer.jpg"
 import IMAGINACTION from "../../../Assets/imaginaction.jpg"
 import DARKBEATS from "../../../Assets/darkbeats.jpg"
+import MILTON from "../../../Assets/miltonaguiar.jpg"
 
 const IMAGINACTION_URL = "https://imaginaction-comics.vercel.app/";
 const DARKBEATS_URL = "https://darkbeatss.vercel.app/";
@@ -55,6 +56,14 @@ const cardsData = [
     imageSrc: DARKBEATS,
     links: {
       demo: DARKBEATS_URL,
+      github: ""
+    }
+  },
+  {
+    title: "Milton Aguiar",
+    imageSrc: MILTON,
+    links: {
+      demo: "https://miltonaguiar.vercel.app/",
       github: ""
     }
   },
