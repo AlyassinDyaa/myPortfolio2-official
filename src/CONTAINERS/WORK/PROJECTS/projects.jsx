@@ -23,11 +23,10 @@ import DARKBEATS from "../../../Assets/darkbeats.jpg"
 import MILTON from "../../../Assets/miltonaguiar.jpg"
 import CATARINA from "../../../Assets/catarina.jpg"
 
-// TODO: replace with the live Catarina Silva URL once it's deployed
-const CATARINA_URL = "#";
+const CATARINA_URL = "https://catarinaportfolio.vercel.app/";
 
 const IMAGINACTION_URL = "https://imaginaction-comics.vercel.app/";
-const DARKBEATS_URL = "https://darkbeatss.vercel.app/";
+const DARKBEATS_URL = "https://jbeatsart.vercel.app/";
 
 // Shown in this order. private: screenshot only, no public demo or source.
 // hidden: kept here but not shown. demo "#" means the link is not ready yet.
@@ -55,7 +54,7 @@ const projects = [
     tech: ["Electron", "React", "Node.js", "SQLite"],
   },
   {
-    title: "DarkBeats",
+    title: "JBeatsArt",
     image: DARKBEATS,
     description: "Portfolio site for illustrator Jordan Beattie, with a filterable gallery, commissions page and a content admin panel.",
     tech: ["React", "Vite", "Framer Motion"],
