@@ -1,32 +1,33 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { HiDownload } from 'react-icons/hi'
+import { Reveal, SectionHead, RESUME, RESUME_NAME } from '../../Components/ui'
 
 import Time from "./TIMELINE/time"
 import PROJECT from "./PROJECTS/projects"
 import "./work.css"
 
-
 const Work = () => {
-  const CV = require("../../Assets/D'YaaAlyassinSoftwareRESUME.pdf");
-  
   return (
-    <div>
-        <motion.div 
-          className="cv-download-container"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <a href={CV} download="Dyaa_Alyassin_Software_Engineer_Resume.pdf" className="cv-download-btn">
-            <HiDownload className="cv-icon" />
-            <span>Download CV</span>
-          </a>
-        </motion.div>
-        
-        <Time/>
-        <PROJECT/>
-    </div>
+    <main className="ui-page">
+      <header className="ui-page-hero">
+        <div className="ui-container work-hero">
+          <SectionHead
+            as="h1"
+            eyebrow="Work"
+            title="Experience & projects"
+            lead="Five years of building enterprise web applications, plus the products and sites I've designed and shipped along the way."
+          />
+          <Reveal delay={0.1}>
+            <a className="ui-btn ui-btn--primary" href={RESUME} download={RESUME_NAME}>
+              <HiDownload /> Download CV
+            </a>
+          </Reveal>
+        </div>
+      </header>
+
+      <Time />
+      <PROJECT />
+    </main>
   )
 }
 

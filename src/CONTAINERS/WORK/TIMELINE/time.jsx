@@ -1,7 +1,8 @@
 import React from 'react'
-import "./time.css"
-import { motion } from "framer-motion";
-import { FaLaptopCode, FaCode } from "react-icons/fa";
+import './time.css'
+import { FaLaptopCode, FaCode } from 'react-icons/fa';
+import { FiMapPin, FiExternalLink } from 'react-icons/fi';
+import { Reveal, SectionHead } from '../../../Components/ui';
 
 const jobs = [
   {
@@ -41,84 +42,51 @@ const jobs = [
 
 const Time = () => {
   return (
-    <div className='container__timeline'>
-      <header className='headONE'>
-        <motion.h1
-          className='header_head'
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          EXPERIENCE
-        </motion.h1>
-      </header>
+    <section className="ui-section" id="experience">
+      <div className="ui-container">
+        <SectionHead eyebrow="Experience" title="Where I've worked" />
 
-      <section className="timeline">
-        <motion.div
-          className="timeline__line"
-          initial={{ scaleY: 0 }}
-          whileInView={{ scaleY: 1 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          viewport={{ once: true }}
-        />
+        <ol className="xp">
+          {jobs.map(({ title, company, location, date, link, Icon, points, projects, tech }, i) => (
+            <Reveal as="li" key={title} className="xp__item" delay={i * 0.08}>
+              <span className="xp__marker"><Icon /></span>
 
-        {jobs.map(({ title, company, location, date, link, Icon, points, projects, tech }, i) => {
-          const fromLeft = i % 2 === 0;
-          // The row watches the viewport; icon and card animate through variants
-          // (an icon starting at scale 0 has no size, so it can't be observed itself)
-          return (
-            <motion.div
-              key={title}
-              className={`timeline__item ${fromLeft ? "is-left" : "is-right"}`}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-80px" }}
-            >
-              <motion.div
-                className="timeline__icon"
-                variants={{
-                  hidden: { scale: 0, rotate: -90 },
-                  show: { scale: 1, rotate: 0, transition: { type: "spring", stiffness: 220, damping: 16, delay: 0.1 } },
-                }}
-              >
-                <Icon />
-              </motion.div>
+              <article className="ui-card xp__card">
+                <header className="xp__head">
+                  <div>
+                    <h3 className="ui-h3">{title}</h3>
+                    <a className="xp__company" href={link} target="_blank" rel="noreferrer">
+                      {company} <FiExternalLink />
+                    </a>
+                  </div>
+                  <div className="xp__meta">
+                    <span className="ui-badge">{date}</span>
+                    {location && <span className="xp__location"><FiMapPin /> {location}</span>}
+                  </div>
+                </header>
 
-              <motion.div
-                className="timeline__card"
-                variants={{
-                  hidden: { opacity: 0, x: fromLeft ? -60 : 60 },
-                  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut", delay: 0.2 } },
-                }}
-              >
-                <span className="timeline__date">{date}</span>
-                <h2>{title}</h2>
-                <a className="timeline__company" href={link} target="_blank" rel="noreferrer">{company}</a>
-                {location && <span className="timeline__location">{location}</span>}
-
-                <ul className="timeline__points">
+                <ul className="xp__points">
                   {points.map((p) => <li key={p}>{p}</li>)}
                 </ul>
 
                 {projects && (
-                  <div className="timeline__projects">
+                  <div className="xp__projects">
                     <h4>Key projects</h4>
                     {projects.map(({ name, text }) => (
-                      <p key={name}><strong>{name}</strong> - {text}</p>
+                      <p key={name}><strong>{name}</strong>: {text}</p>
                     ))}
                   </div>
                 )}
 
-                <div className="timeline__tech">
-                  {tech.map((t) => <span key={t}>{t}</span>)}
+                <div className="ui-tags">
+                  {tech.map((t) => <span key={t} className="ui-tag">{t}</span>)}
                 </div>
-              </motion.div>
-            </motion.div>
-          );
-        })}
-      </section>
-    </div>
+              </article>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+    </section>
   )
 }
 

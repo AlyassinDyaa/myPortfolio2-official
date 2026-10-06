@@ -1,9 +1,8 @@
 import React from 'react'
 import "./projects.css"
 
-import { motion } from "framer-motion";
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { FaLock } from 'react-icons/fa';
+import { FiExternalLink, FiGithub, FiLock, FiClock } from 'react-icons/fi';
+import { Reveal, SectionHead } from '../../../Components/ui';
 
 import IMG1 from "../../../Assets/portfolio1.png";
 import IMG2 from "../../../Assets/portfolio2.png";
@@ -30,327 +29,203 @@ const CATARINA_URL = "#";
 const IMAGINACTION_URL = "https://imaginaction-comics.vercel.app/";
 const DARKBEATS_URL = "https://darkbeatss.vercel.app/";
 
-
-// Private projects: screenshots only, no public demo or source links
-const privateCards = [
+// Shown in this order. private: screenshot only, no public demo or source.
+// hidden: kept here but not shown. demo "#" means the link is not ready yet.
+const projects = [
   {
     title: "TubeGrab",
     hidden: true,
-    imageSrc: TUBEGRAB,
+    private: true,
+    image: TUBEGRAB,
     description: "Windows desktop app for downloading YouTube videos and playlists, with parallel downloads, a live queue and per-playlist combining into one video with chapters.",
     tech: ["Python", "CustomTkinter", "yt-dlp", "FFmpeg"],
   },
   {
     title: "IDyaa Dashboard",
-    imageSrc: DASHBOARD,
+    private: true,
+    image: DASHBOARD,
     description: "Personal productivity workspace with a Word-style document editor, financial tracker, tasks, fitness and habits, plus Claude AI built in. Installable as a PWA.",
     tech: ["React", "TypeScript", "Vite", "Node.js"],
   },
   {
     title: "Home Media Player",
-    imageSrc: MEDIAPLAYER,
+    private: true,
+    image: MEDIAPLAYER,
     description: "Streaming platform with account login that turns messy movie and TV folders into a Netflix-style library with artwork, and plays almost any format.",
     tech: ["Electron", "React", "Node.js", "SQLite"],
   },
-];
-
-const cardsData = [
   {
     title: "DarkBeats",
-    imageSrc: DARKBEATS,
-    links: {
-      demo: DARKBEATS_URL,
-      github: ""
-    }
+    image: DARKBEATS,
+    description: "Portfolio site for illustrator Jordan Beattie, with a filterable gallery, commissions page and a content admin panel.",
+    tech: ["React", "Vite", "Framer Motion"],
+    demo: DARKBEATS_URL,
   },
   {
     title: "Milton Aguiar",
-    imageSrc: MILTON,
-    links: {
-      demo: "https://miltonaguiar.vercel.app/",
-      github: ""
-    }
+    image: MILTON,
+    description: "Portfolio site for comic book artist Milton Aguiar, creator of Raptor.",
+    tech: ["React", "Vite", "Framer Motion"],
+    demo: "https://miltonaguiar.vercel.app/",
   },
   {
     title: "Catarina Silva",
-    imageSrc: CATARINA,
-    links: {
-      demo: CATARINA_URL,
-      github: ""
-    }
+    image: CATARINA,
+    description: "Portfolio and shop links for artist, illustrator and animator Catarina Silva, with a content admin panel.",
+    tech: ["React", "Vite", "Framer Motion"],
+    demo: CATARINA_URL,
   },
   {
     title: "ImaginAction Comics",
-    imageSrc: IMAGINACTION,
-    links: {
-      demo: IMAGINACTION_URL,
-      github: ""
-    }
+    image: IMAGINACTION,
+    description: "Website for independent comics publisher ImaginAction: catalogue, series pages, creators, gallery and news, edited through an admin panel.",
+    tech: ["React", "Vite", "Framer Motion"],
+    demo: IMAGINACTION_URL,
   },
   {
     title: "Nextus Customs",
-    imageSrc: IMG11,
-    links: {
-      demo: "https://nextuscustoms.com",
-      github: ""
-    }
+    image: IMG11,
+    description: "Online store website.",
+    demo: "https://nextuscustoms.com",
   },
   {
     title: "Portfolio 1",
-    imageSrc: IMG1,
-    links: {
-      demo: "https://alyassinprotfolio1.netlify.app",
-      github: "https://github.com/AlyassinDyaa/portfolio1"
-    }
+    image: IMG1,
+    description: "Personal portfolio site.",
+    tech: ["React"],
+    demo: "https://alyassinprotfolio1.netlify.app",
+    github: "https://github.com/AlyassinDyaa/portfolio1",
   },
   {
     title: "Portfolio 2",
-    imageSrc: IMG2,
-    links: {
-      demo: "https://alyassinportfolio2.netlify.app",
-      github: "https://github.com/AlyassinDyaa/portfolio2"
-    }
+    image: IMG2,
+    description: "Personal portfolio site.",
+    tech: ["React"],
+    demo: "https://alyassinportfolio2.netlify.app",
+    github: "https://github.com/AlyassinDyaa/portfolio2",
   },
   {
     title: "Portfolio 3",
-    imageSrc: IMG8,
-    links: {
-      demo: "https://dyaaportfolio1.netlify.app/",
-      github: ""
-    }
+    image: IMG8,
+    description: "Personal portfolio site.",
+    demo: "https://dyaaportfolio1.netlify.app/",
   },
   {
     title: "Restaurant",
-    imageSrc: IMG3,
-    links: {
-      demo: "https://alyassinrest.netlify.app",
-      github: "https://github.com/AlyassinDyaa/restauarntGh"
-    }
+    image: IMG3,
+    description: "Restaurant landing page.",
+    tech: ["React"],
+    demo: "https://alyassinrest.netlify.app",
+    github: "https://github.com/AlyassinDyaa/restauarntGh",
   },
   {
     title: "Your Design",
-    imageSrc: IMG10,
-    links: {
-      demo: "https://yourdesign.vercel.app/",
-      github: "https://github.com/AlyassinDyaa/yourDesign/tree/main/yd"
-    }
+    image: IMG10,
+    description: "Design studio website.",
+    tech: ["React"],
+    demo: "https://yourdesign.vercel.app/",
+    github: "https://github.com/AlyassinDyaa/yourDesign/tree/main/yd",
   },
   {
     title: "NetClone",
-    imageSrc: IMG5,
-    links: {
-      demo: "https://alyassinnetflix.netlify.app",
-      github: ""
-    }
+    image: IMG5,
+    description: "Netflix-style streaming interface.",
+    tech: ["Angular"],
+    demo: "https://alyassinnetflix.netlify.app",
   },
   {
     title: "UNOVA Fit",
-    imageSrc: IMG7,
-    links: {
-      demo: "https://play.google.com/store/apps/details?id=com.unova_fit",
-      github: ""
-    }
+    image: IMG7,
+    description: "Fitness app published on Google Play.",
+    demo: "https://play.google.com/store/apps/details?id=com.unova_fit",
   },
-
- 
 ];
 
-const cardsComingSoon = [
-  {
-    title: "Fitness",
-    imageSrc: IMG6,
-    links: {
-      /*demo: "",
-      github: ""*/
-    }
-  },
-  {
-    title: "3D Portfolio",
-    imageSrc: IMG9,
-    links: {
-     /* demo: "https://my3dportfolio1.netlify.app/",
-      github: "https://github.com/AlyassinDyaa/3dPortfolio1"*/
-    }
-  },
-  {
-    title: "MetaWorld",
-    imageSrc: IMG4,
-    links: {
-      /*demo: "",
-      github: "https://github.com/AlyassinDyaa/metaWorld"*/
-    }
-  },
-  // add more objects as needed
+const comingSoon = [
+  { title: "Fitness", image: IMG6 },
+  { title: "3D Portfolio", image: IMG9 },
+  { title: "MetaWorld", image: IMG4 },
 ];
 
-function Card({ title, imageSrc, links }) {
+const ProjectCard = ({ title, image, description, tech, demo, github, private: isPrivate }) => {
+  const demoReady = demo && demo !== '#';
   return (
-    <motion.div 
-      className='card-container'
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
-    >
-
-      <div className="flip-card">
-
-        <div className="flip-card-inner">
-
-
-          <div className="flip-card-front">
-          <img src={imageSrc} alt="card" className="img" />
-            <p className="title" >{title}</p>
-            
-          </div>
-
-
-          <div className="flip-card-back">
-            
-            
-            <div className="comp">
-              {!links.demo && !links.github && <p className="private-note">Coming soon</p>}
-              <div className="container__links">
-                {links.demo && (
-                <div className="container__eye">
-                  <h1>DEMO</h1>
-                  <a href={links.demo} target="_blank" rel="noreferrer">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      whileHover={{ scale: 1.1, color: "violet" }}
-                      transition={{ 
-                        type: "spring", 
-                        stiffness: 260, 
-                        damping: 20 
-                      }}
-                    >
-                      <AiFillEye />
-                    </motion.div>
-                  </a>
-                </div>
-                )}
-
-                {links.github && (
-                <div className="container__git">
-                  <h1>GITHUB</h1>
-                  <a href={links.github} target="_blank" rel="noreferrer">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      whileHover={{ scale: 1.1, color: "violet" }}
-                      transition={{ 
-                        type: "spring", 
-                        stiffness: 260, 
-                        damping: 20,
-                        delay: 0.1
-                      }}
-                      
-                    >
-                      <AiFillGithub />
-                    </motion.div>
-                  </a>
-                </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+    <article className="ui-card ui-card--hover project">
+      <div className="project__media">
+        <img src={image} alt={`${title} screenshot`} loading="lazy" />
+        {isPrivate && <span className="ui-badge project__badge"><FiLock /> Private</span>}
       </div>
 
+      <div className="project__body">
+        <h3 className="ui-h3">{title}</h3>
+        {description && <p className="project__desc">{description}</p>}
+        {tech && (
+          <div className="ui-tags">
+            {tech.map((t) => <span key={t} className="ui-tag">{t}</span>)}
+          </div>
+        )}
 
-    
-    </motion.div>
+        <div className="project__actions">
+          {isPrivate && <span className="project__note"><FiLock /> Private project, source and demo not public</span>}
+          {demoReady && (
+            <a className="ui-btn ui-btn--ghost ui-btn--sm" href={demo} target="_blank" rel="noreferrer">
+              <FiExternalLink /> Live demo
+            </a>
+          )}
+          {demo === '#' && <span className="project__note"><FiClock /> Link coming soon</span>}
+          {github && (
+            <a className="ui-btn ui-btn--ghost ui-btn--sm" href={github} target="_blank" rel="noreferrer">
+              <FiGithub /> Code
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+};
+
+function Projects() {
+  return (
+    <>
+      <section className="ui-section" id="projects">
+        <div className="ui-container">
+          <SectionHead
+            eyebrow="Projects"
+            title="Things I've built"
+            lead="Personal products, sites built for clients and creators, and earlier front-end work."
+          />
+          <div className="projects-grid">
+            {projects.filter((p) => !p.hidden).map((p, i) => (
+              <Reveal key={p.title} delay={(i % 3) * 0.06}>
+                <ProjectCard {...p} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="ui-section">
+        <div className="ui-container">
+          <SectionHead eyebrow="In progress" title="Coming soon" />
+          <div className="projects-grid projects-grid--soon">
+            {comingSoon.map(({ title, image }, i) => (
+              <Reveal key={title} delay={i * 0.06}>
+                <article className="ui-card project project--soon">
+                  <div className="project__media">
+                    <img src={image} alt={`${title} preview`} loading="lazy" />
+                    <span className="ui-badge project__badge"><FiClock /> Soon</span>
+                  </div>
+                  <div className="project__body">
+                    <h3 className="ui-h3">{title}</h3>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
-
-
-function PrivateCard({ title, imageSrc, description, tech }) {
-  return (
-    <motion.div
-      className='card-container'
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-50px" }}
-    >
-      <div className="flip-card">
-        <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <span className="private-badge"><FaLock /> PRIVATE</span>
-            <img src={imageSrc} alt={`${title} screenshot`} className="img" />
-            <p className="title">{title}</p>
-          </div>
-
-          <div className="flip-card-back private-back">
-            <span className="private-badge private-badge--inline"><FaLock /> Private project</span>
-            <p className="private-title">{title}</p>
-            <p className="private-desc">{description}</p>
-            <div className="private-tech">
-              {tech.map((t) => <span key={t}>{t}</span>)}
-            </div>
-            <p className="private-note">Source and demo not public</p>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function Work() {
-  return (
-    <div id='work' className='workClass'>
-      
-      <motion.div 
-        className='container__work'
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <h1 className='container__work-title'> PROJECTS </h1>
-        <h2 className='container__work-sub'> Hover or tap a card for details and live demos</h2>
-      </motion.div>
-
-
-        <div className="work">
-          {privateCards.filter((card) => !card.hidden).map((card) => (
-            <PrivateCard key={card.title} {...card} />
-          ))}
-          {cardsData.map((card, index) => (
-            <Card
-              key={card.title}
-              title={card.title}
-              imageSrc={card.imageSrc}
-              links={card.links}
-            />
-          ))}
-        </div>
-
-        <motion.div 
-          className='container__work'
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-            <h1 className='container__work-title'> COMING SOON </h1>
-            <h2 className='container__work-sub'> Currently in progress</h2>
-      </motion.div>
-      <div className="work">
-          {cardsComingSoon.map((card, index) => (
-            <Card
-              key={card.title}
-              title={card.title}
-              imageSrc={card.imageSrc}
-              links={card.links}
-            />
-          ))}
-        </div>
-
-      </div>
-  );
-}
-
-export default Work;
+export default Projects;

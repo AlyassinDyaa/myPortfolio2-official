@@ -1,305 +1,92 @@
-.workClass
-{
-  background-image: url('../../../Assets/Background/tex1.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  background-size: cover;
-  background-repeat: no-repeat;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
-  
-  .container__work-title
-  {
-    padding-top: 6rem;
-    padding-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: var(--heading-shadow);
-    text-align: center;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+.projects-grid > div {
+  display: flex;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.project__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--line);
+}
+
+.project__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s var(--ease);
+}
+
+.project:hover .project__media img {
+  transform: scale(1.04);
+}
+
+.project__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 12, 30, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.project__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  padding: 20px;
+}
+
+.project__desc {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.project__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.project__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+.project--soon .project__media img {
+  filter: saturate(0.6) brightness(0.8);
+}
+
+@media (max-width: 980px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .container__work-sub
-  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 1rem;
-    padding: 1rem 16px; /* decrease the padding-top value */
-    text-align: center;
-    color: white;
+}
+
+@media (max-width: 620px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
-  
-  
-  .work {
-    display: grid;
-    /* as many columns as fit, so cards never run off the screen */
-    grid-template-columns: repeat(auto-fill, minmax(min(440px, 100%), 1fr));
-    justify-content: center;
-    align-items: center;
-    max-width: 1800px;
-    margin: 0 auto;
-  }
-  
-  .card-container {
-    margin: 1rem;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10%;
-    
-  }
-  
-  .flip-card {
-    background-color: transparent;
-    /* fixed shape so the screenshot and title always fit inside the card */
-    width: 100%;
-    max-width: 420px;
-    aspect-ratio: 5 / 4;
-    perspective: 1000px;
-    font-family: sans-serif;
-    margin: 0 8px 16px 8px; /* add bottom margin to create space between rows */
- }
-  
-    
-  
-    
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-style: preserve-3d;
-    }
-    
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-      
-    }
-    
-    .flip-card-front, .flip-card-back {
-      box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      border: 1px solid var(--card-border);
-      border-radius: 1rem;
-    }
-    
-    .flip-card-front {
-      background: var(--card-bg);
-      color: white;
-      justify-content: flex-start;
-      gap: 0.8rem;
-      padding: 1rem;
-      transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-  
-    .flip-card-front:hover
-    {
-      box-shadow: 0 0 30px violet;
-    }
-    .flip-card-back {
-      background: var(--card-bg);
-      color: white;
-      transform: rotateY(180deg);
-      flex-shrink: 0;
-      margin: 0;
-      padding: -10rem;
-      margin-top: -10px; /* add negative margin-top to bring the text up */
-      box-shadow: 0 0 30px violet;
-  
-    }
-    
-  
-    .flip-card-front .title {
-        font-size: large;
-        font-weight: 700;
-        text-align: center;
-        line-height: 1.2;
-        margin: 0;
-      }
-      
-  
-  
-    .container__links
-    {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-    padding-bottom: 30px;
-    }
-  
-    .container__eye h1
-    {
-      font-size: small;
-      margin: 0;
-      padding-top: 2rem;
-      padding-bottom: 0.5rem;
-      
-    }
-  
-    .container__git h1
-    {
-      font-size: small;
-      margin: 0;
-      padding-top: 2rem;
-      padding-bottom: 0.5rem;
-    }
-  
-  
-    .flip-card-front .img {
-      display: block;
-      width: 100%;
-      flex: 1 1 auto;
-      min-height: 0;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 1rem;
-      border: 2px solid violet;
-    }
-    
-    
-  
-   
-    /* Private projects */
-    .private-badge {
-      position: absolute;
-      top: 0.8rem;
-      left: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 0.3rem 0.7rem;
-      border-radius: 50px;
-      color: white;
-      background: rgba(138, 43, 226, 0.85);
-      border: 1px solid violet;
-      box-shadow: 0 0 12px rgba(238, 130, 238, 0.5);
-      z-index: 1;
-    }
-
-    .private-badge--inline {
-      position: static;
-      align-self: center;
-      margin-bottom: 0.6rem;
-    }
-
-    .private-back {
-      align-items: center;
-      padding: 1rem 1.2rem;
-      box-sizing: border-box;
-    }
-
-    .private-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin: 0 0 0.4rem;
-    }
-
-    .private-desc {
-      font-size: 0.82rem;
-      line-height: 1.45;
-      margin: 0 0 0.7rem;
-      color: rgba(255, 255, 255, 0.88);
-    }
-
-    .private-tech {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.35rem;
-    }
-
-    .private-tech span {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 50px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .private-note {
-      margin: 0.7rem 0 0;
-      font-size: 0.7rem;
-      font-style: italic;
-      opacity: 0.65;
-    }
-
-    @media (max-width: 599px) {
-
-        .flip-card-inner {
-          perspective: 500px;
-          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-          .flip-card-front .title {
-            font-size: 20px;
-          }
-          
-    
-        .container__eye h1
-        {
-          font-size: 8px;
-          margin: 0;
-          padding-top: 2rem;
-          padding-bottom: 0.5rem;
-          
-        }
-      
-        .container__git h1
-        {
-          font-size: 8px;
-          margin: 0;
-          padding-top: 2rem;
-          padding-bottom: 0.5rem;
-        }
-
-        .work {
-           
-            grid-template-columns: repeat(1, 1fr);   
-            
-          }
-          
-      }
-
-
-      @media screen and (min-width: 768px) and (max-width: 1024px) {
-        /* CSS rules for tablet screens */
-        .card-container{
-       
-        }
-
-        .work {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-auto-flow: dense;
-        }
-      }
-      
-
-      @media (min-width: 731px) and (max-width: 835px) {
-        /* CSS rules for tablet screens */
-        .card-container{
-       
-        }
-
-        .work {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-auto-flow: dense;
-        }
-      }
+}

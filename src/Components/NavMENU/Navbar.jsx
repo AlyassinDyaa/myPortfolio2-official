@@ -1,82 +1,77 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { BiInfinite } from 'react-icons/bi';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { HiDownload, HiMenuAlt3, HiX } from 'react-icons/hi';
+import { RESUME, RESUME_NAME } from '../ui';
 import './Navbar.css';
 
-
-const scrollToTop = () => window.scrollTo(0, 0);
+const links = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/Work', label: 'Work' },
+  { to: '/Education', label: 'Education' },
+  { to: '/Hobbies', label: 'Hobbies' },
+  { to: '/Contact', label: 'Contact' },
+];
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  // close the mobile menu whenever the page changes
+  useEffect(() => setOpen(false), [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <nav className="app__navbar">
-      <div className="app__navbar-logo">
-        <h2 style={{ color: 'wheat' }}>DA</h2>
-      </div>
-      <ul className="app__navbar-links">
-      <li className="p__opensans">
-          <Link to="/" onClick={() => {  scrollToTop();} }>Home</Link>
-        </li>
-        <li className="p__opensans">
-          <Link to="/Work" onClick={() => {  scrollToTop();} }>Work</Link>
-        </li>
-        <li className="p__opensans">
-          <Link to="/Education" onClick={() => {  scrollToTop();} }>Education</Link>
-        </li>
-        <li className="p__opensans">
-          <Link to="/Hobbies" onClick={() => {  scrollToTop();} }>Hobbies</Link>
-        </li>
-        <li className="p__opensans">
-          <Link to="/Contact" onClick={() => {  scrollToTop();} }>Contact</Link>
-        </li>
-      </ul>
+    <header className={`nav${scrolled || open ? ' is-solid' : ''}`}>
+      <div className="ui-container nav__inner">
+        <Link to="/" className="nav__brand" aria-label="D'Yaa Alyassin, home">
+          <span className="nav__logo">DA</span>
+          <span className="nav__name">D'Yaa Alyassin</span>
+        </Link>
 
-      <div className="app__navbar-smallscreen">
-        <GiHamburgerMenu
-          color="wheat"
-          fontSize={27}
-          onClick={() => setToggleMenu(true)}
-        />
-        {toggleMenu && (
-          <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
-            <BiInfinite
-              fontSize={27}
-              className="overlay__close"
-              onClick={() => setToggleMenu(false)}
-            />
-            <ul className="app__navbar-smallscreen_links">
-              <li>
-                <Link to="/" onClick={() => {setToggleMenu(false); scrollToTop()}}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/Work" onClick={() => {setToggleMenu(false); scrollToTop()}}>
-                  Work
-                </Link>
-              </li>
-              <li>
-                <Link to="/Education" onClick={() => {setToggleMenu(false); scrollToTop()}}>
-                  Education
-                </Link>
-              </li>
-              <li>
-                <Link to="/Hobbies" onClick={() => {setToggleMenu(false); scrollToTop()}}>
-                  Hobbies
-                </Link>
-              </li>
-              <li>
-                <Link to="/Contact" onClick={() => {setToggleMenu(false); scrollToTop()}}>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
+        <nav className="nav__links" aria-label="Main">
+          {links.map(({ to, label, end }) => (
+            <NavLink key={to} to={to} end={end} className={({ isActive }) => `nav__link${isActive ? ' is-active' : ''}`}>
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <a className="ui-btn ui-btn--primary ui-btn--sm nav__cta" href={RESUME} download={RESUME_NAME}>
+          <HiDownload /> Resume
+        </a>
+
+        <button
+          className="nav__toggle"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <HiX /> : <HiMenuAlt3 />}
+        </button>
       </div>
-    </nav>
+
+      {open && (
+        <div className="nav__mobile">
+          <div className="ui-container">
+            {links.map(({ to, label, end }) => (
+              <NavLink key={to} to={to} end={end} className={({ isActive }) => `nav__mobile-link${isActive ? ' is-active' : ''}`}>
+                {label}
+              </NavLink>
+            ))}
+            <a className="ui-btn ui-btn--primary nav__mobile-cta" href={RESUME} download={RESUME_NAME}>
+              <HiDownload /> Download resume
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 

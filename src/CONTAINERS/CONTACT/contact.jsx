@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import "./contact.css";
-import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs" 
-import { AiFillInstagram, AiFillMail, AiFillPhone } from "react-icons/ai"
-import { HiLocationMarker } from "react-icons/hi"
-import { MdSend } from "react-icons/md"
+import { BsFacebook, BsLinkedin, BsGithub } from 'react-icons/bs';
+import { AiFillInstagram } from 'react-icons/ai';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { Reveal, SectionHead } from '../../Components/ui';
+import './contact.css';
+
+const details = [
+  { Icon: FiMail, label: 'Email', value: 'dyaaalyassin99@gmail.com', href: 'mailto:dyaaalyassin99@gmail.com' },
+  { Icon: FiPhone, label: 'Phone', value: '+1 518 952 5899', href: 'tel:+15189525899' },
+  { Icon: FiMapPin, label: 'Location', value: 'Albany, NY' },
+];
+
+const socials = [
+  { Icon: BsLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/d-yaa-a-1b56b9144/' },
+  { Icon: BsGithub, label: 'GitHub', href: 'https://github.com/AlyassinDyaa' },
+  { Icon: BsFacebook, label: 'Facebook', href: 'https://www.facebook.com/dyaa.alyassin/' },
+  { Icon: AiFillInstagram, label: 'Instagram', href: 'https://www.instagram.com/dyaa_alyassin/' },
+];
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -74,195 +86,79 @@ const Contact = () => {
   };
 
   return (
-    <div className='container__contact' id='contact'>
-      <motion.div 
-        className="contact-wrapper"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="contact-header">
-          <motion.h1 
-            className="contact-title"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Let's Connect
-          </motion.h1>
-          <motion.p 
-            className="contact-subtitle"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Have a question or want to work together? I'd love to hear from you!
-          </motion.p>
+    <main className="ui-page" id="contact">
+      <header className="ui-page-hero">
+        <div className="ui-container">
+          <SectionHead
+            as="h1"
+            eyebrow="Contact"
+            title="Let's work together"
+            lead="Have a role, a project or a question? Send a message and I'll get back to you soon."
+          />
         </div>
+      </header>
 
-        <div className='contact-content'>
-          <motion.div 
-            className='contact-info-section'
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <h2 className="info-title">Get in Touch</h2>
-            
-            <div className="contact-info-items">
-              <div className="info-item">
-                <div className="info-icon">
-                  <AiFillMail />
-                </div>
-                <div className="info-text">
-                  <h3>Email</h3>
-                  <a href="mailto:dyaaalyassin99@gmail.com">dyaaalyassin99@gmail.com</a>
+      <section className="ui-section contact-section">
+        <div className="ui-container contact-grid">
+          <Reveal className="contact-info">
+            {details.map(({ Icon, label, value, href }) => (
+              <div key={label} className="ui-card contact-detail">
+                <span className="ui-icon"><Icon /></span>
+                <div>
+                  <span className="contact-detail__label">{label}</span>
+                  {href ? <a href={href}>{value}</a> : <span>{value}</span>}
                 </div>
               </div>
+            ))}
 
-              <div className="info-item">
-                <div className="info-icon">
-                  <AiFillPhone />
-                </div>
-                <div className="info-text">
-                  <h3>Phone</h3>
-                  <p>+1 518 952 5899</p>
-                </div>
-              </div>
-
-              <div className="info-item">
-                <div className="info-icon">
-                  <HiLocationMarker />
-                </div>
-                <div className="info-text">
-                  <h3>Location</h3>
-                  <p>Albany, NY</p>
-                </div>
+            <div className="ui-card contact-social">
+              <span className="contact-detail__label">Find me online</span>
+              <div className="contact-social__icons">
+                {socials.map(({ Icon, label, href }) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
+                    <Icon />
+                  </a>
+                ))}
               </div>
             </div>
+          </Reveal>
 
-            <div className='social-links'>
-              <h3>Follow Me</h3>
-              <div className="social-icons">
-                <a href="https://www.linkedin.com/in/d-yaa-a-1b56b9144/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <BsLinkedin />
-                </a>
-                <a href="https://github.com/AlyassinDyaa" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <BsGithub />
-                </a>
-                <a href="https://www.facebook.com/dyaa.alyassin/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <BsFacebook />
-                </a>
-                <a href="https://www.instagram.com/dyaa_alyassin/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <AiFillInstagram />
-                </a>
+          <Reveal delay={0.08} className="ui-card contact-form-card">
+            <form onSubmit={sendEmail} className="contact-form">
+              <div className="contact-form__row">
+                <label className="field">
+                  <span>Name</span>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Jane Smith" />
+                </label>
+                <label className="field">
+                  <span>Email</span>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="jane@company.com" />
+                </label>
               </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className='contact-form-section'
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <form onSubmit={sendEmail} className="modern-contact-form">
-              <div className="form-group">
-                <label htmlFor="name">Your Name</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required 
-                  placeholder="John Doe"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email">Your Email</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required 
-                  placeholder="john@example.com"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject">Subject</label>
-                <input 
-                  type="text" 
-                  name="subject" 
-                  id="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required 
-                  placeholder="Project Inquiry"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea 
-                  name="message" 
-                  id="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required 
-                  placeholder="Tell me about your project..."
-                ></textarea>
-              </div>
+              <label className="field">
+                <span>Subject</span>
+                <input type="text" name="subject" value={formData.subject} onChange={handleChange} required placeholder="Software Engineer role" />
+              </label>
+              <label className="field">
+                <span>Message</span>
+                <textarea name="message" rows="6" value={formData.message} onChange={handleChange} required placeholder="Tell me a little about it..." />
+              </label>
 
               {submitStatus === 'success' && (
-                <motion.div 
-                  className="status-message success"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  ✓ Message sent successfully! I'll get back to you soon.
-                </motion.div>
+                <p className="form-status is-success"><FiCheckCircle /> Message sent. I'll get back to you soon.</p>
               )}
-
               {submitStatus === 'error' && (
-                <motion.div 
-                  className="status-message error"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  ✗ Oops! Something went wrong. Please try again.
-                </motion.div>
+                <p className="form-status is-error"><FiAlertCircle /> Something went wrong. Please try again or email me directly.</p>
               )}
 
-              <motion.button 
-                type="submit" 
-                className="submit-btn"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {isSubmitting ? (
-                  <>
-                    <span className="spinner"></span>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <MdSend />
-                    Send Message
-                  </>
-                )}
-              </motion.button>
+              <button type="submit" className="ui-btn ui-btn--primary contact-form__submit" disabled={isSubmitting}>
+                {isSubmitting ? <><span className="spinner" /> Sending...</> : <><FiSend /> Send message</>}
+              </button>
             </form>
-          </motion.div>
+          </Reveal>
         </div>
-      </motion.div>
-    </div>
+      </section>
+    </main>
   );
 }
 
