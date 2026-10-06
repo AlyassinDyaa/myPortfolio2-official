@@ -22,6 +22,10 @@ import MEDIAPLAYER from "../../../Assets/mediaplayer.jpg"
 import IMAGINACTION from "../../../Assets/imaginaction.jpg"
 import DARKBEATS from "../../../Assets/darkbeats.jpg"
 import MILTON from "../../../Assets/miltonaguiar.jpg"
+import CATARINA from "../../../Assets/catarina.jpg"
+
+// TODO: replace with the live Catarina Silva URL once it's deployed
+const CATARINA_URL = "#";
 
 const IMAGINACTION_URL = "https://imaginaction-comics.vercel.app/";
 const DARKBEATS_URL = "https://darkbeatss.vercel.app/";
@@ -64,6 +68,14 @@ const cardsData = [
     imageSrc: MILTON,
     links: {
       demo: "https://miltonaguiar.vercel.app/",
+      github: ""
+    }
+  },
+  {
+    title: "Catarina Silva",
+    imageSrc: CATARINA,
+    links: {
+      demo: CATARINA_URL,
       github: ""
     }
   },
