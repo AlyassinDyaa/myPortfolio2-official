@@ -10,7 +10,7 @@ const socials = [
   { href: "https://github.com/AlyassinDyaa", label: "GitHub", Icon: BsGithub },
   { href: "https://www.facebook.com/dyaa.alyassin/", label: "Facebook", Icon: BsFacebook },
   { href: "https://www.instagram.com/dyaa_alyassin/", label: "Instagram", Icon: AiFillInstagram },
-  { href: "https://www.instagram.com/infinity_comicss/", label: "Infinity Comics", Icon: GiOverInfinity },
+  { href: "https://www.instagram.com/idyaaart/", label: "IDyaa Art on Instagram", Icon: GiOverInfinity },
 ];
 
 const pages = [
