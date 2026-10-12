@@ -75,9 +75,9 @@ const projects = [
     title: "ICCD",
     category: "client",
     image: ICCD,
-    description: "Website for the Islamic Center of the Capital District: prayer times with a live countdown, services, learning and community events.",
-    tech: ["React", "TypeScript", "Vite"],
-    demo: "https://iccdny.vercel.app/",
+    description: "Website and admin dashboard for the Islamic Center of the Capital District: live prayer times with countdown and Hijri date, events, education, donations and dark mode.",
+    tech: ["Node.js", "Express", "JavaScript"],
+    demo: "https://iccd-new-site.vercel.app/",
   },
   {
     title: "First Gear Automotive",
