@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import './time.css'
 import { FaLaptopCode, FaCode } from 'react-icons/fa';
-import { FiMapPin, FiExternalLink } from 'react-icons/fi';
+import { FiMapPin, FiExternalLink, FiChevronDown } from 'react-icons/fi';
 import { Reveal, SectionHead } from '../../../Components/ui';
 
 const jobs = [
@@ -40,49 +41,85 @@ const jobs = [
   },
 ];
 
+const Job = ({ job, index, open, onToggle }) => {
+  const { title, company, location, date, link, Icon, points, projects, tech } = job
+  const panelId = `xp-panel-${index}`
+  return (
+    <Reveal as="li" className={`xp__item${open ? ' is-open' : ''}`} delay={index * 0.08}>
+      <span className="xp__marker"><Icon /></span>
+
+      <article className="ui-card xp__card">
+        <header className="xp__head">
+          <div>
+            <h3 className="ui-h3">{title}</h3>
+            <a className="xp__company" href={link} target="_blank" rel="noreferrer">
+              {company} <FiExternalLink />
+            </a>
+          </div>
+          <div className="xp__meta">
+            <span className="ui-badge">{date}</span>
+            {location && <span className="xp__location"><FiMapPin /> {location}</span>}
+          </div>
+        </header>
+
+        <div className="ui-tags">
+          {tech.map((t) => <span key={t} className="ui-tag">{t}</span>)}
+        </div>
+
+        <AnimatePresence initial={false}>
+          {open && (
+            <motion.div
+              id={panelId}
+              key="details"
+              className="xp__details"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <ul className="xp__points">
+                {points.map((p) => <li key={p}>{p}</li>)}
+              </ul>
+
+              {projects && (
+                <div className="xp__projects">
+                  <h4>Key projects</h4>
+                  {projects.map(({ name, text }) => (
+                    <p key={name}><strong>{name}</strong>: {text}</p>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <button className="xp__toggle" onClick={onToggle} aria-expanded={open} aria-controls={panelId}>
+          {open ? 'Hide details' : 'Show details'}
+          <FiChevronDown className="xp__chev" />
+        </button>
+      </article>
+    </Reveal>
+  )
+}
+
 const Time = () => {
+  // the current role starts open; the rest expand on click
+  const [openSet, setOpenSet] = useState(() => new Set([0]))
+  const toggle = (i) => setOpenSet((prev) => {
+    const next = new Set(prev)
+    if (next.has(i)) next.delete(i)
+    else next.add(i)
+    return next
+  })
+
   return (
     <section className="ui-section" id="experience">
       <div className="ui-container">
         <SectionHead eyebrow="Experience" title="Where I've worked" />
 
         <ol className="xp">
-          {jobs.map(({ title, company, location, date, link, Icon, points, projects, tech }, i) => (
-            <Reveal as="li" key={title} className="xp__item" delay={i * 0.08}>
-              <span className="xp__marker"><Icon /></span>
-
-              <article className="ui-card xp__card">
-                <header className="xp__head">
-                  <div>
-                    <h3 className="ui-h3">{title}</h3>
-                    <a className="xp__company" href={link} target="_blank" rel="noreferrer">
-                      {company} <FiExternalLink />
-                    </a>
-                  </div>
-                  <div className="xp__meta">
-                    <span className="ui-badge">{date}</span>
-                    {location && <span className="xp__location"><FiMapPin /> {location}</span>}
-                  </div>
-                </header>
-
-                <ul className="xp__points">
-                  {points.map((p) => <li key={p}>{p}</li>)}
-                </ul>
-
-                {projects && (
-                  <div className="xp__projects">
-                    <h4>Key projects</h4>
-                    {projects.map(({ name, text }) => (
-                      <p key={name}><strong>{name}</strong>: {text}</p>
-                    ))}
-                  </div>
-                )}
-
-                <div className="ui-tags">
-                  {tech.map((t) => <span key={t} className="ui-tag">{t}</span>)}
-                </div>
-              </article>
-            </Reveal>
+          {jobs.map((job, i) => (
+            <Job key={job.title} job={job} index={i} open={openSet.has(i)} onToggle={() => toggle(i)} />
           ))}
         </ol>
       </div>

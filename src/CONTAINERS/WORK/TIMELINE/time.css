@@ -157,3 +157,46 @@
     flex-wrap: wrap;
   }
 }
+
+/* Expand / collapse */
+.xp__card > .ui-tags {
+  margin-bottom: 4px;
+}
+
+.xp__details {
+  overflow: hidden;
+}
+
+.xp__details .xp__points {
+  margin-top: 18px;
+}
+
+.xp__details .xp__projects {
+  margin-bottom: 4px;
+}
+
+.xp__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent-text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.xp__toggle:hover {
+  color: #fff;
+}
+
+.xp__chev {
+  transition: transform 0.3s var(--ease);
+}
+
+.xp__item.is-open .xp__chev {
+  transform: rotate(180deg);
+}

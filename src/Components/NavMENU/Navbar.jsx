@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { HiDownload, HiMenuAlt3, HiX } from 'react-icons/hi';
+import { FiSearch } from 'react-icons/fi';
 import { RESUME, RESUME_NAME } from '../ui';
 import './Navbar.css';
 
@@ -11,6 +12,9 @@ const links = [
   { to: '/Hobbies', label: 'Hobbies' },
   { to: '/Contact', label: 'Contact' },
 ];
+
+const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+const openPalette = () => window.dispatchEvent(new Event('open-command-palette'));
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -42,6 +46,11 @@ const Navbar = () => {
             </NavLink>
           ))}
         </nav>
+
+        <button className="nav__cmd" onClick={openPalette} aria-label="Open command palette" title="Search and shortcuts">
+          <FiSearch />
+          <span className="nav__cmd-keys"><kbd>{isMac ? '⌘' : 'Ctrl'}</kbd><kbd>K</kbd></span>
+        </button>
 
         <a className="ui-btn ui-btn--primary ui-btn--sm nav__cta" href={RESUME} download={RESUME_NAME}>
           <HiDownload /> Resume

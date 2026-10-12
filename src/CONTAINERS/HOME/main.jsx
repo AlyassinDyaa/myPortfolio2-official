@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { HiDownload, HiArrowRight } from 'react-icons/hi'
 import { BsLinkedin, BsGithub } from 'react-icons/bs'
 import { FaCodeBranch, FaServer, FaUsers } from 'react-icons/fa'
-import { Reveal, SectionHead, RESUME, RESUME_NAME } from '../../Components/ui'
+import { Reveal, SectionHead, CountUp, RotatingText, RESUME, RESUME_NAME } from '../../Components/ui'
 import './home.css'
 
 import ME from '../../Assets/dyaa.png'
@@ -18,6 +18,8 @@ const stats = [
   { value: '13', label: 'Languages localized' },
   { value: '3', label: 'Front-end frameworks led' },
 ]
+
+const roles = ['Full-Stack .NET Developer', 'Software Engineer', 'ASP.NET Core & React', 'Front-End Lead']
 
 const stack = ['C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'REST APIs', 'JavaScript', 'React', 'Angular', 'Vue.js', 'Oracle', 'Git']
 
@@ -47,6 +49,19 @@ const explore = [
 ]
 
 const Home = () => {
+  // photo tilts gently toward the cursor
+  const photoRef = useRef(null)
+  const mx = useMotionValue(0)
+  const my = useMotionValue(0)
+  const rotX = useSpring(useTransform(my, [-0.5, 0.5], [8, -8]), { stiffness: 150, damping: 18 })
+  const rotY = useSpring(useTransform(mx, [-0.5, 0.5], [-10, 10]), { stiffness: 150, damping: 18 })
+  const onPhotoMove = (e) => {
+    const r = photoRef.current.getBoundingClientRect()
+    mx.set((e.clientX - r.left) / r.width - 0.5)
+    my.set((e.clientY - r.top) / r.height - 0.5)
+  }
+  const onPhotoLeave = () => { mx.set(0); my.set(0) }
+
   return (
     <main className="ui-page home">
       {/* Hero */}
@@ -62,7 +77,7 @@ const Home = () => {
             <h1 className="ui-h1">
               Hi, I'm <span className="ui-gradient-text">D'Yaa Alyassin</span>
             </h1>
-            <p className="home-hero__role">Full-Stack .NET Developer</p>
+            <p className="home-hero__role"><RotatingText words={roles} /></p>
             <p className="ui-lead">
               5+ years building enterprise web applications with C#, ASP.NET Core, SQL Server and React,
               from first requirement to production.
@@ -84,7 +99,7 @@ const Home = () => {
             <dl className="home-stats">
               {stats.map(({ value, label }) => (
                 <div key={label} className="home-stats__item">
-                  <dt>{value}</dt>
+                  <dt><CountUp value={value} /></dt>
                   <dd>{label}</dd>
                 </div>
               ))}
@@ -97,9 +112,15 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="home-hero__frame">
+            <motion.div
+              ref={photoRef}
+              className="home-hero__frame"
+              onMouseMove={onPhotoMove}
+              onMouseLeave={onPhotoLeave}
+              style={{ rotateX: rotX, rotateY: rotY, transformPerspective: 900 }}
+            >
               <img src={ME} alt="D'Yaa Alyassin" />
-            </div>
+            </motion.div>
             <div className="home-hero__chip">
               <span className="home-hero__dot" /> Currently at NYS Division of Human Rights
             </div>

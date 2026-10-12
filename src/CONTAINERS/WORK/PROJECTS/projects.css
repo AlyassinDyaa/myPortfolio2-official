@@ -90,3 +90,97 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Clickable cards + detail view */
+.project.is-clickable {
+  cursor: pointer;
+}
+
+.project__badge + .project__badge {
+  top: 46px;
+}
+
+.project__peek {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(15, 12, 30, 0.8);
+  border: 1px solid rgba(196, 181, 253, 0.4);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.project:hover .project__peek,
+.project:focus-visible .project__peek {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: none) {
+  .project__peek { opacity: 1; transform: none; }
+}
+
+.project-modal__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-modal__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 32px 32px;
+}
+
+.project-modal__body .project__actions {
+  margin-top: 8px;
+}
+
+.project-modal__body .ui-btn--ghost {
+  height: 44px;
+  padding: 0 20px;
+}
+
+@media (max-width: 560px) {
+  .project-modal__body {
+    padding: 22px 18px 24px;
+  }
+}
+
+/* Badges sit top-right on cards and bottom-left in the detail view,
+   so they never cover a logo in the screenshot or the close button */
+.project__badge {
+  left: auto;
+  right: 12px;
+}
+
+.project-modal__media .project__badge {
+  top: auto;
+  right: auto;
+  left: 16px;
+  bottom: 16px;
+}
+
+.project-modal__media .project__badge + .project__badge {
+  top: auto;
+  bottom: 50px;
+}

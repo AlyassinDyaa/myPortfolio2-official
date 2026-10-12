@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BsFacebook, BsLinkedin, BsGithub } from 'react-icons/bs';
 import { AiFillInstagram } from 'react-icons/ai';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle, FiAlertCircle, FiCopy, FiCheck } from 'react-icons/fi';
 import { Reveal, SectionHead } from '../../Components/ui';
 import './contact.css';
 
@@ -19,6 +19,17 @@ const socials = [
 ];
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('dyaaalyassin99@gmail.com');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch (err) {
+      window.location.href = 'mailto:dyaaalyassin99@gmail.com';
+    }
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
   const [formData, setFormData] = useState({
@@ -108,6 +119,11 @@ const Contact = () => {
                   <span className="contact-detail__label">{label}</span>
                   {href ? <a href={href}>{value}</a> : <span>{value}</span>}
                 </div>
+                {label === 'Email' && (
+                  <button type="button" className="contact-copy" onClick={copyEmail} aria-label="Copy email address">
+                    {copied ? <><FiCheck /> Copied</> : <><FiCopy /> Copy</>}
+                  </button>
+                )}
               </div>
             ))}
 

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 import NAVMENU from "./Components/NavMENU/Navbar"
 import ScrollToTop from "./Components/ScrollToTop"
+import CommandPalette from "./Components/CommandPalette"
+import { ScrollProgress, useCardSpotlight } from "./Components/ui"
 
 import MAIN from "./CONTAINERS/HOME/main"
 import Work from "./CONTAINERS/WORK/work"
@@ -13,10 +15,14 @@ import CONTACT from "./CONTAINERS/CONTACT/contact"
 import FOOTER from "./CONTAINERS/FOOTER/footer"
 
 const App = () => {
+  useCardSpotlight()
+
   return (
     <Router>
       <ScrollToTop />
+      <ScrollProgress />
       <NAVMENU/>
+      <CommandPalette />
 
       <Routes>
         <Route path="/" element={<MAIN />} />

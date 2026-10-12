@@ -198,3 +198,26 @@
     align-self: stretch;
   }
 }
+
+.contact-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  height: 34px;
+  padding: 0 12px;
+  flex: none;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-copy:hover {
+  color: #fff;
+  border-color: rgba(139, 92, 246, 0.5);
+}

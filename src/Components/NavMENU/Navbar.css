@@ -142,3 +142,44 @@
     display: inline-flex;
   }
 }
+
+/* Command palette trigger */
+.nav__cmd {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 10px 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav__cmd:hover {
+  color: var(--text);
+  border-color: rgba(196, 181, 253, 0.5);
+}
+
+.nav__cmd-keys {
+  display: inline-flex;
+  gap: 3px;
+}
+
+@media (max-width: 860px) {
+  .nav__cmd {
+    margin-left: auto;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .nav__cmd-keys { display: none; }
+
+  .nav__toggle { margin-left: 8px; }
+}
